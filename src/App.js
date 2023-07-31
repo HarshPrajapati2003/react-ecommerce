@@ -4,7 +4,7 @@ import './App.css';
 import Home from './Pages/Home';
 import LoginPage from './Pages/LoginPage';
 import SignupPage from './Pages/SignupPage';
-
+import CartPage from './Pages/CartPage';
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
@@ -25,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignupPage></SignupPage>,
+  },
+  {
+    path: "/cart",
+    element: <CartPage></CartPage>,
   },
 ]);
 
