@@ -8,7 +8,6 @@ export default function Login() {
   const {register,handleSubmit,formState: { errors }} = useForm();
   const error = useSelector(selectError)
   const user = useSelector(selectLoggedInUser)
-  console.log("e",error)
   const dispatch = useDispatch();
   return (
     <>
