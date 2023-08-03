@@ -48,7 +48,9 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/3/1.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ]
     },
     {
       "id": 4,
@@ -1426,7 +1428,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/78/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/78/thumbnail.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/78/thumbnail.jpg"
+      ]
     },
     {
       "id": 79,
@@ -1439,7 +1443,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/79/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/79/1.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/79/1.jpg"
+      ]
     },
     {
       "id": 80,
@@ -2226,7 +2232,7 @@
       "checked": false
     }
   ],
-  "categories":[
+  "categories": [
     {
       "value": "smartphones",
       "label": "smartphones",
@@ -2326,6 +2332,88 @@
       "value": "lighting",
       "label": "lighting",
       "checked": false
+    }
+  ],
+  "users": [
+    {
+      "email": "hrsdp2683@gmail.com",
+      "password": "Harsh2003",
+      "id": 1
+    },
+    {
+      "email": "com@com.com",
+      "password": "Qwert123",
+      "id": 2
+    },
+    {
+      "email": "com@com.com",
+      "password": "Asdfg123",
+      "id": 3
+    },
+    {
+      "email": "com@com.com",
+      "password": "Asdfg123",
+      "id": 4
+    },
+    {
+      "email": "com@com.com",
+      "password": "Asdfg123",
+      "id": 5
+    },
+    {
+      "email": "com@com.com",
+      "password": "Asdfg123",
+      "id": 6
+    },
+    {
+      "email": "com@com.com",
+      "password": "Asdfg123",
+      "id": 7
+    },
+    {
+      "email": "com@gmail.com",
+      "password": "Asdfg123",
+      "id": 8
+    },
+    {
+      "email": "com@gmail.com",
+      "password": "Asdfg123",
+      "id": 9
+    },
+    {
+      "email": "com@gmail.com",
+      "password": "Asdfg123",
+      "id": 10
+    },
+    {
+      "email": "com@gmail.com",
+      "password": "Asdfg123",
+      "id": 11
+    },
+    {
+      "email": "com@gmail.com",
+      "password": "Asdfg123",
+      "id": 12
+    },
+    {
+      "email": "hrp2683@gmail.com",
+      "password": "Harsh2003",
+      "id": 13
+    },
+    {
+      "email": "hrp2683@gmail.com",
+      "password": "Harsh2003",
+      "id": 14
+    },
+    {
+      "email": "hrp2683@gmail.com",
+      "password": "Harsh2003",
+      "id": 15
+    },
+    {
+      "email": "hrp2683@gmail.com",
+      "password": "Harsh2003",
+      "id": 16
     }
   ]
 }
