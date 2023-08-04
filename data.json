@@ -2363,340 +2363,22 @@
     {
       "email": "wwe@1234gmail.com",
       "password": "Harsh2003",
-      "addresses": [],
+      "addresses": [
+        {
+          "name": "સલીલભાઈ સંકારભાઈ ગાવિત",
+          "email": "wwe@1234",
+          "phone": "+919537407968",
+          "street": "sdfdsfdsf",
+          "city": "dsfdsf",
+          "state": "GUJARAT",
+          "pinCode": "382415"
+        }
+      ],
       "id": 2
     }
   ],
-  "cart": [
-    {
-      "title": "frock gold printed",
-      "description": "Ghazi fabric long frock gold printed ready to wear stitched collection (G992)",
-      "price": 600,
-      "discountPercentage": 15.55,
-      "rating": 4.31,
-      "stock": 150,
-      "brand": "Ghazi Fabric",
-      "category": "womens-dresses",
-      "thumbnail": "https://i.dummyjson.com/data/products/43/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/43/1.jpg",
-        "https://i.dummyjson.com/data/products/43/2.jpg",
-        "https://i.dummyjson.com/data/products/43/3.jpg",
-        "https://i.dummyjson.com/data/products/43/4.jpg",
-        "https://i.dummyjson.com/data/products/43/thumbnail.jpg"
-      ],
-      "quantity": 3,
-      "user": 2,
-      "id": 58
-    }
-  ],
+  "cart": [],
   "orders": [
-    {
-      "items": [
-        {
-          "id": 3,
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
-          ],
-          "quantity": 1,
-          "user": 1
-        },
-        {
-          "title": "Money Heist Printed Summer T Shirts",
-          "description": "Fabric Jercy, Size: M & L Wear Stylish Dual Stiched",
-          "price": 66,
-          "discountPercentage": 15.97,
-          "rating": 4.9,
-          "stock": 122,
-          "brand": "The Warehouse",
-          "category": "mens-shirts",
-          "thumbnail": "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/55/1.jpg",
-            "https://i.dummyjson.com/data/products/55/2.webp",
-            "https://i.dummyjson.com/data/products/55/3.jpg",
-            "https://i.dummyjson.com/data/products/55/4.jpg",
-            "https://i.dummyjson.com/data/products/55/thumbnail.jpg"
-          ],
-          "quantity": 3,
-          "user": 1,
-          "id": 56
-        }
-      ],
-      "totalAmount": 1447,
-      "totalItems": 4,
-      "user": {
-        "email": "hrsdp2683@gmail.com",
-        "password": "Harsh2003",
-        "addresses": [
-          {
-            "name": "Harsh",
-            "email": "hrsdp2683@gmail.com",
-            "phone": "+919537407968",
-            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
-            "city": "AHMEDABAD",
-            "state": "GUJARAT",
-            "pinCode": "382415"
-          },
-          {
-            "name": "hpd",
-            "email": "com@com.com",
-            "phone": "8758866537",
-            "street": "c/2 shefali app.",
-            "city": "AHMEDABAD",
-            "state": "GUJARAT",
-            "pinCode": "382415"
-          }
-        ],
-        "id": 1
-      },
-      "paymentMethod": "card",
-      "selectedAddress": {
-        "name": "hpd",
-        "email": "com@com.com",
-        "phone": "8758866537",
-        "street": "c/2 shefali app.",
-        "city": "AHMEDABAD",
-        "state": "GUJARAT",
-        "pinCode": "382415"
-      },
-      "id": 1
-    },
-    {
-      "items": [
-        {
-          "id": 3,
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
-          ],
-          "quantity": 1,
-          "user": 1
-        },
-        {
-          "title": "Money Heist Printed Summer T Shirts",
-          "description": "Fabric Jercy, Size: M & L Wear Stylish Dual Stiched",
-          "price": 66,
-          "discountPercentage": 15.97,
-          "rating": 4.9,
-          "stock": 122,
-          "brand": "The Warehouse",
-          "category": "mens-shirts",
-          "thumbnail": "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/55/1.jpg",
-            "https://i.dummyjson.com/data/products/55/2.webp",
-            "https://i.dummyjson.com/data/products/55/3.jpg",
-            "https://i.dummyjson.com/data/products/55/4.jpg",
-            "https://i.dummyjson.com/data/products/55/thumbnail.jpg"
-          ],
-          "quantity": 3,
-          "user": 1,
-          "id": 56
-        }
-      ],
-      "totalAmount": 1447,
-      "totalItems": 4,
-      "user": {
-        "email": "hrsdp2683@gmail.com",
-        "password": "Harsh2003",
-        "addresses": [
-          {
-            "name": "Harsh",
-            "email": "hrsdp2683@gmail.com",
-            "phone": "+919537407968",
-            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
-            "city": "AHMEDABAD",
-            "state": "GUJARAT",
-            "pinCode": "382415"
-          },
-          {
-            "name": "hpd",
-            "email": "com@com.com",
-            "phone": "8758866537",
-            "street": "c/2 shefali app.",
-            "city": "AHMEDABAD",
-            "state": "GUJARAT",
-            "pinCode": "382415"
-          }
-        ],
-        "id": 1
-      },
-      "paymentMethod": "cash",
-      "selectedAddress": {
-        "name": "Harsh",
-        "email": "hrsdp2683@gmail.com",
-        "phone": "+919537407968",
-        "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
-        "city": "AHMEDABAD",
-        "state": "GUJARAT",
-        "pinCode": "382415"
-      },
-      "status": "pending",
-      "id": 2
-    },
-    {
-      "items": [
-        {
-          "id": 3,
-          "title": "Samsung Universe 9",
-          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-          "price": 1249,
-          "discountPercentage": 15.46,
-          "rating": 4.09,
-          "stock": 36,
-          "brand": "Samsung",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/3/1.jpg"
-          ],
-          "quantity": 1,
-          "user": 1
-        },
-        {
-          "title": "Money Heist Printed Summer T Shirts",
-          "description": "Fabric Jercy, Size: M & L Wear Stylish Dual Stiched",
-          "price": 66,
-          "discountPercentage": 15.97,
-          "rating": 4.9,
-          "stock": 122,
-          "brand": "The Warehouse",
-          "category": "mens-shirts",
-          "thumbnail": "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/55/1.jpg",
-            "https://i.dummyjson.com/data/products/55/2.webp",
-            "https://i.dummyjson.com/data/products/55/3.jpg",
-            "https://i.dummyjson.com/data/products/55/4.jpg",
-            "https://i.dummyjson.com/data/products/55/thumbnail.jpg"
-          ],
-          "quantity": 3,
-          "user": 1,
-          "id": 56
-        }
-      ],
-      "totalAmount": 1447,
-      "totalItems": 4,
-      "user": {
-        "email": "hrsdp2683@gmail.com",
-        "password": "Harsh2003",
-        "addresses": [
-          {
-            "name": "Harsh",
-            "email": "hrsdp2683@gmail.com",
-            "phone": "+919537407968",
-            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
-            "city": "AHMEDABAD",
-            "state": "GUJARAT",
-            "pinCode": "382415"
-          },
-          {
-            "name": "hpd",
-            "email": "com@com.com",
-            "phone": "8758866537",
-            "street": "c/2 shefali app.",
-            "city": "AHMEDABAD",
-            "state": "GUJARAT",
-            "pinCode": "382415"
-          }
-        ],
-        "id": 1
-      },
-      "paymentMethod": "cash",
-      "selectedAddress": {
-        "name": "hpd",
-        "email": "com@com.com",
-        "phone": "8758866537",
-        "street": "c/2 shefali app.",
-        "city": "AHMEDABAD",
-        "state": "GUJARAT",
-        "pinCode": "382415"
-      },
-      "status": "pending",
-      "id": 3
-    },
-    {
-      "items": [
-        {
-          "title": "Handbag For Girls",
-          "description": "This fashion is designed to add a charming effect to your casual outfit. This Bag is made of synthetic leather.",
-          "price": 23,
-          "discountPercentage": 17.5,
-          "rating": 4.91,
-          "stock": 27,
-          "brand": "LouisWill",
-          "category": "womens-bags",
-          "thumbnail": "https://i.dummyjson.com/data/products/72/thumbnail.webp",
-          "images": [
-            "https://i.dummyjson.com/data/products/72/1.jpg",
-            "https://i.dummyjson.com/data/products/72/2.png",
-            "https://i.dummyjson.com/data/products/72/3.webp",
-            "https://i.dummyjson.com/data/products/72/4.jpg",
-            "https://i.dummyjson.com/data/products/72/thumbnail.webp"
-          ],
-          "quantity": 1,
-          "user": 1,
-          "id": 56
-        }
-      ],
-      "totalAmount": 23,
-      "totalItems": 1,
-      "user": {
-        "email": "hrsdp2683@gmail.com",
-        "password": "Harsh2003",
-        "addresses": [
-          {
-            "name": "Harsh",
-            "email": "hrsdp2683@gmail.com",
-            "phone": "+919537407968",
-            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
-            "city": "AHMEDABAD",
-            "state": "GUJARAT",
-            "pinCode": "382415"
-          },
-          {
-            "name": "hpd",
-            "email": "com@com.com",
-            "phone": "8758866537",
-            "street": "c/2 shefali app.",
-            "city": "AHMEDABAD",
-            "state": "GUJARAT",
-            "pinCode": "382415"
-          }
-        ],
-        "id": 1
-      },
-      "paymentMethod": "card",
-      "selectedAddress": {
-        "name": "Harsh",
-        "email": "hrsdp2683@gmail.com",
-        "phone": "+919537407968",
-        "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
-        "city": "AHMEDABAD",
-        "state": "GUJARAT",
-        "pinCode": "382415"
-      },
-      "status": "pending",
-      "id": 4
-    },
     {
       "items": [
         {
@@ -2716,12 +2398,146 @@
             "https://i.dummyjson.com/data/products/43/4.jpg",
             "https://i.dummyjson.com/data/products/43/thumbnail.jpg"
           ],
-          "quantity": 1,
-          "user": 1,
-          "id": 57
+          "quantity": 3,
+          "user": 2,
+          "id": 58
         }
       ],
-      "totalAmount": 600,
+      "totalAmount": 1800,
+      "totalItems": 3,
+      "user": {
+        "email": "wwe@1234gmail.com",
+        "password": "Harsh2003",
+        "addresses": [
+          {
+            "name": "સલીલભાઈ સંકારભાઈ ગાવિત",
+            "email": "wwe@1234",
+            "phone": "+919537407968",
+            "street": "sdfdsfdsf",
+            "city": "dsfdsf",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 2
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "સલીલભાઈ સંકારભાઈ ગાવિત",
+        "email": "wwe@1234",
+        "phone": "+919537407968",
+        "street": "sdfdsfdsf",
+        "city": "dsfdsf",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "status": "pending",
+      "id": 6
+    },
+    {
+      "items": [
+        {
+          "title": "3 DOOR PORTABLE",
+          "description": "Material: Stainless Steel and Fabric  Item Size: 110 cm x 45 cm x 175 cm Package Contents: 1 Storage Wardrobe",
+          "price": 41,
+          "discountPercentage": 7.98,
+          "rating": 4.06,
+          "stock": 68,
+          "brand": "AmnaMart",
+          "category": "furniture",
+          "thumbnail": "https://i.dummyjson.com/data/products/35/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/35/1.jpg",
+            "https://i.dummyjson.com/data/products/35/2.jpg",
+            "https://i.dummyjson.com/data/products/35/3.jpg",
+            "https://i.dummyjson.com/data/products/35/4.jpg",
+            "https://i.dummyjson.com/data/products/35/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        },
+        {
+          "title": "Stylish Luxury Digital Watch",
+          "description": "Stylish Luxury Digital Watch For Girls / Women - Led Smart Ladies Watches For Girls",
+          "price": 57,
+          "discountPercentage": 9.03,
+          "rating": 4.55,
+          "stock": 77,
+          "brand": "Luxury Digital",
+          "category": "womens-watches",
+          "thumbnail": "https://i.dummyjson.com/data/products/68/thumbnail.webp",
+          "images": [
+            "https://i.dummyjson.com/data/products/68/1.jpg",
+            "https://i.dummyjson.com/data/products/68/2.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 98,
+      "totalItems": 2,
+      "user": {
+        "email": "hrsdp2683@gmail.com",
+        "password": "Harsh2003",
+        "addresses": [
+          {
+            "name": "Harsh",
+            "email": "hrsdp2683@gmail.com",
+            "phone": "+919537407968",
+            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          },
+          {
+            "name": "hpd",
+            "email": "com@com.com",
+            "phone": "8758866537",
+            "street": "c/2 shefali app.",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "Harsh",
+        "email": "hrsdp2683@gmail.com",
+        "phone": "+919537407968",
+        "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+        "city": "AHMEDABAD",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "status": "pending",
+      "id": 7
+    },
+    {
+      "items": [
+        {
+          "title": "women winter clothes",
+          "description": "women winter clothes thick fleece hoodie top with sweat pantjogger women sweatsuit set joggers pants two piece pants set",
+          "price": 57,
+          "discountPercentage": 13.39,
+          "rating": 4.91,
+          "stock": 84,
+          "brand": "Top Sweater",
+          "category": "tops",
+          "thumbnail": "https://i.dummyjson.com/data/products/40/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/40/1.jpg",
+            "https://i.dummyjson.com/data/products/40/2.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 57,
       "totalItems": 1,
       "user": {
         "email": "hrsdp2683@gmail.com",
@@ -2749,9 +2565,17 @@
         "id": 1
       },
       "paymentMethod": "cash",
-      "selectedAddress": null,
+      "selectedAddress": {
+        "name": "hpd",
+        "email": "com@com.com",
+        "phone": "8758866537",
+        "street": "c/2 shefali app.",
+        "city": "AHMEDABAD",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
       "status": "pending",
-      "id": 5
+      "id": 8
     }
   ]
 }

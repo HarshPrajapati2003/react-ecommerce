@@ -24,7 +24,7 @@ const OrderSuccessPage = () => {
           Order Number #{params?.id}
         </h1>
         <p className="mt-6 text-base leading-7 text-gray-600">
-          You can cjeck your order in My Account > My Order
+          You can cjeck your order in My Account My Order
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link
