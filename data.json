@@ -2338,56 +2338,36 @@
     {
       "email": "hrsdp2683@gmail.com",
       "password": "Harsh2003",
+      "addresses": [
+        {
+          "name": "Harsh",
+          "email": "hrsdp2683@gmail.com",
+          "phone": "+919537407968",
+          "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+          "city": "AHMEDABAD",
+          "state": "GUJARAT",
+          "pinCode": "382415"
+        },
+        {
+          "name": "hpd",
+          "email": "com@com.com",
+          "phone": "8758866537",
+          "street": "c/2 shefali app.",
+          "city": "AHMEDABAD",
+          "state": "GUJARAT",
+          "pinCode": "382415"
+        }
+      ],
       "id": 1
     },
     {
       "email": "wwe@1234gmail.com",
       "password": "Harsh2003",
+      "addresses": [],
       "id": 2
     }
   ],
   "cart": [
-    {
-      "id": 1,
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
-      "price": 549,
-      "discountPercentage": 12.96,
-      "rating": 4.69,
-      "stock": 94,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/1/1.jpg",
-        "https://i.dummyjson.com/data/products/1/2.jpg",
-        "https://i.dummyjson.com/data/products/1/3.jpg",
-        "https://i.dummyjson.com/data/products/1/4.jpg",
-        "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
-      ],
-      "quantity": 2,
-      "user": 1
-    },
-    {
-      "id": 6,
-      "title": "MacBook Pro",
-      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
-      "price": 1749,
-      "discountPercentage": 11.02,
-      "rating": 4.57,
-      "stock": 83,
-      "brand": "Apple",
-      "category": "laptops",
-      "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
-      "images": [
-        "https://i.dummyjson.com/data/products/6/1.png",
-        "https://i.dummyjson.com/data/products/6/2.jpg",
-        "https://i.dummyjson.com/data/products/6/3.png",
-        "https://i.dummyjson.com/data/products/6/4.jpg"
-      ],
-      "quantity": 3,
-      "user": 1
-    },
     {
       "id": 55,
       "title": "Money Heist Printed Summer T Shirts",
@@ -2431,25 +2411,124 @@
       "user": 2
     },
     {
-      "id": 97,
-      "title": "Metal Ceramic Flower",
-      "description": "Metal Ceramic Flower Chandelier Home Lighting American Vintage Hanging Lighting Pendant Lamp",
-      "price": 35,
-      "discountPercentage": 10.94,
-      "rating": 4.93,
-      "stock": 146,
-      "brand": "Ifei Home",
-      "category": "lighting",
-      "thumbnail": "https://i.dummyjson.com/data/products/97/thumbnail.jpg",
+      "id": 3,
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/97/1.jpg",
-        "https://i.dummyjson.com/data/products/97/2.jpg",
-        "https://i.dummyjson.com/data/products/97/3.jpg",
-        "https://i.dummyjson.com/data/products/97/4.webp",
-        "https://i.dummyjson.com/data/products/97/thumbnail.jpg"
+        "https://i.dummyjson.com/data/products/3/1.jpg"
       ],
       "quantity": 1,
       "user": 1
+    },
+    {
+      "title": "Money Heist Printed Summer T Shirts",
+      "description": "Fabric Jercy, Size: M & L Wear Stylish Dual Stiched",
+      "price": 66,
+      "discountPercentage": 15.97,
+      "rating": 4.9,
+      "stock": 122,
+      "brand": "The Warehouse",
+      "category": "mens-shirts",
+      "thumbnail": "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/55/1.jpg",
+        "https://i.dummyjson.com/data/products/55/2.webp",
+        "https://i.dummyjson.com/data/products/55/3.jpg",
+        "https://i.dummyjson.com/data/products/55/4.jpg",
+        "https://i.dummyjson.com/data/products/55/thumbnail.jpg"
+      ],
+      "quantity": 3,
+      "user": 1,
+      "id": 56
+    }
+  ],
+  "orders": [
+    {
+      "items": [
+        {
+          "id": 3,
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 1,
+          "user": 1
+        },
+        {
+          "title": "Money Heist Printed Summer T Shirts",
+          "description": "Fabric Jercy, Size: M & L Wear Stylish Dual Stiched",
+          "price": 66,
+          "discountPercentage": 15.97,
+          "rating": 4.9,
+          "stock": 122,
+          "brand": "The Warehouse",
+          "category": "mens-shirts",
+          "thumbnail": "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/55/1.jpg",
+            "https://i.dummyjson.com/data/products/55/2.webp",
+            "https://i.dummyjson.com/data/products/55/3.jpg",
+            "https://i.dummyjson.com/data/products/55/4.jpg",
+            "https://i.dummyjson.com/data/products/55/thumbnail.jpg"
+          ],
+          "quantity": 3,
+          "user": 1,
+          "id": 56
+        }
+      ],
+      "totalAmount": 1447,
+      "totalItems": 4,
+      "user": {
+        "email": "hrsdp2683@gmail.com",
+        "password": "Harsh2003",
+        "addresses": [
+          {
+            "name": "Harsh",
+            "email": "hrsdp2683@gmail.com",
+            "phone": "+919537407968",
+            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          },
+          {
+            "name": "hpd",
+            "email": "com@com.com",
+            "phone": "8758866537",
+            "street": "c/2 shefali app.",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "hpd",
+        "email": "com@com.com",
+        "phone": "8758866537",
+        "street": "c/2 shefali app.",
+        "city": "AHMEDABAD",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "id": 1
     }
   ]
 }
