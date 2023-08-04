@@ -39,7 +39,7 @@ export default function ProductDetail() {
   const product = useSelector(selectProductById)
   const dispatch = useDispatch()
   const params = useParams()
-
+  
   const handleCart=(e)=>{
     e.preventDefault()
     const newItem = {...product,quantity:1,user:user.id}
