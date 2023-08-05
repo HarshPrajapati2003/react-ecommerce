@@ -2345,7 +2345,7 @@
           "phone": "+919537407968",
           "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
           "city": "AHMEDABAD",
-          "state": "GUJARAT",
+          "state": "GUJARATI",
           "pinCode": "382415"
         },
         {
@@ -2576,6 +2576,91 @@
       },
       "status": "pending",
       "id": 8
+    },
+    {
+      "items": [
+        {
+          "title": "Golden Watch Pearls Bracelet Watch",
+          "description": "Product details of Golden Watch Pearls Bracelet Watch For Girls - Golden Chain Ladies Bracelate Watch for Women",
+          "price": 47,
+          "discountPercentage": 17.55,
+          "rating": 4.77,
+          "stock": 89,
+          "brand": "Watch Pearls",
+          "category": "womens-watches",
+          "thumbnail": "https://i.dummyjson.com/data/products/69/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/69/1.jpg",
+            "https://i.dummyjson.com/data/products/69/2.jpg",
+            "https://i.dummyjson.com/data/products/69/3.webp",
+            "https://i.dummyjson.com/data/products/69/4.jpg",
+            "https://i.dummyjson.com/data/products/69/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        },
+        {
+          "title": "Freckle Treatment Cream- 15gm",
+          "description": "Fair & Clear is Pakistan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
+          "price": 70,
+          "discountPercentage": 16.99,
+          "rating": 4.06,
+          "stock": 140,
+          "brand": "Fair & Clear",
+          "category": "skincare",
+          "thumbnail": "https://i.dummyjson.com/data/products/20/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/20/1.jpg",
+            "https://i.dummyjson.com/data/products/20/2.jpg",
+            "https://i.dummyjson.com/data/products/20/3.jpg",
+            "https://i.dummyjson.com/data/products/20/4.jpg",
+            "https://i.dummyjson.com/data/products/20/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 117,
+      "totalItems": 2,
+      "user": {
+        "email": "hrsdp2683@gmail.com",
+        "password": "Harsh2003",
+        "addresses": [
+          {
+            "name": "Harsh",
+            "email": "hrsdp2683@gmail.com",
+            "phone": "+919537407968",
+            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          },
+          {
+            "name": "hpd",
+            "email": "com@com.com",
+            "phone": "8758866537",
+            "street": "c/2 shefali app.",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "Harsh",
+        "email": "hrsdp2683@gmail.com",
+        "phone": "+919537407968",
+        "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+        "city": "AHMEDABAD",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "status": "pending",
+      "id": 9
     }
   ]
 }
