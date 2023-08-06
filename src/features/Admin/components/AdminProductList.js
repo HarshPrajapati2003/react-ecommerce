@@ -9,7 +9,7 @@ import {
   selectBrands,
   selectCategories,
   selectTotalItems,
-} from "../ProductSlice";
+} from "../../product/ProductSlice";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -32,8 +32,6 @@ const sortOptions = [
   { name: "Price: Low to High", sort: "price", order: "asc", current: false },
   { name: "Price: High to Low", sort: "price", order: "desc", current: false },
 ];
-
-
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -72,7 +70,7 @@ const oldproducts = [
   },
 ];
 
-export default function ProductList() {
+export default function AdminProductList() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const dispatch = useDispatch();
   const products = useSelector(selectAllProducts);
@@ -84,12 +82,12 @@ export default function ProductList() {
     {
       id: "category",
       name: "Category",
-      options:categories
+      options: categories,
     },
     {
       id: "brand",
       name: "Brands",
-      options: brands
+      options: brands,
     },
   ];
 
@@ -129,7 +127,6 @@ export default function ProductList() {
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
     dispatch(fetchAllProductsByFilterAsync({ filter, sort, pagination }));
-    // TODO : server will filter deleted products
   }, [dispatch, filter, sort, page]);
 
   useEffect(() => {
@@ -137,8 +134,8 @@ export default function ProductList() {
   }, [totalItems, sort]);
 
   useEffect(() => {
-    dispatch(fetchBrandsAsync())
-    dispatch(fetchCategoriesAsync())
+    dispatch(fetchBrandsAsync());
+    dispatch(fetchCategoriesAsync());
   }, []);
 
   return (
@@ -227,10 +224,23 @@ export default function ProductList() {
             </h2>
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-              <DesktopFilter handleFilter={handleFilter} filters={filters}></DesktopFilter>
+              <DesktopFilter
+                handleFilter={handleFilter}
+                filters={filters}
+              ></DesktopFilter>
 
               {/* Product grid */}
+              
               <div className="lg:col-span-3">
+              <div>
+                    <Link
+                    to = "/admin/product-form"
+                      type="submit"
+                      className="rounded-md mx-10 my-5 bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+                    >
+                      Add New  Product
+                    </Link>
+                  </div>
                 <ProductGrid products={products}></ProductGrid>
               </div>
               {/* Product Grid end */}
@@ -257,7 +267,7 @@ function MobileFilter({
   mobileFiltersOpen,
   setMobileFiltersOpen,
   handleFilter,
-  filters
+  filters,
 }) {
   return (
     <>
@@ -375,7 +385,7 @@ function MobileFilter({
   );
 }
 
-function DesktopFilter({ handleFilter,filters }) {
+function DesktopFilter({ handleFilter, filters }) {
   return (
     <>
       {/* Filters */}
@@ -435,18 +445,18 @@ function DesktopFilter({ handleFilter,filters }) {
 }
 
 function Pagination({ handlePage, page, setPage, totalItems }) {
-  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE)
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
   return (
     <>
       <div className="flex flex-1 justify-between sm:hidden">
         <div
-          onClick={(e)=> handlePage(page > 1 ? page-1 : page)}
+          onClick={(e) => handlePage(page > 1 ? page - 1 : page)}
           className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 cursor-pointer"
         >
           Previous
         </div>
         <div
-          onClick={(e)=> handlePage(page < totalPages ? page+1 : page)}
+          onClick={(e) => handlePage(page < totalPages ? page + 1 : page)}
           className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 cursor-pointer"
         >
           Next
@@ -474,7 +484,7 @@ function Pagination({ handlePage, page, setPage, totalItems }) {
             aria-label="Pagination"
           >
             <div
-              onClick={(e)=> handlePage(page > 1 ? page-1 : page)}
+              onClick={(e) => handlePage(page > 1 ? page - 1 : page)}
               className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 cursor-pointer"
             >
               <span className="sr-only">Previous</span>
@@ -484,23 +494,21 @@ function Pagination({ handlePage, page, setPage, totalItems }) {
 
             {/* important step for pagination */}
 
-            {Array.from({ length: totalPages }).map(
-              (ele, index) => (
-                <div
-                  onClick={(e) => handlePage(index + 1)}
-                  aria-current="page"
-                  className={`relative z-10 cursor-pointer inline-flex items-center ${
-                    index + 1 === page
-                      ? "bg-indigo-600 text-white"
-                      : " text-gray-400"
-                  } px-4 py-2 text-sm font-semibold  focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
-                >
-                  {index + 1}
-                </div>
-              )
-            )}
+            {Array.from({ length: totalPages }).map((ele, index) => (
+              <div
+                onClick={(e) => handlePage(index + 1)}
+                aria-current="page"
+                className={`relative z-10 cursor-pointer inline-flex items-center ${
+                  index + 1 === page
+                    ? "bg-indigo-600 text-white"
+                    : " text-gray-400"
+                } px-4 py-2 text-sm font-semibold  focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
+              >
+                {index + 1}
+              </div>
+            ))}
             <div
-              onClick={(e)=> handlePage(page < totalPages ? page+1 : page)}
+              onClick={(e) => handlePage(page < totalPages ? page + 1 : page)}
               className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 cursor-pointer"
             >
               <span className="sr-only">Next</span>
@@ -521,6 +529,7 @@ function ProductGrid({ products }) {
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
             {products.map((product) => (
+              <div>
               <Link to={`/product-detail/${product.id}`}>
                 <div
                   key={product.id}
@@ -566,6 +575,16 @@ function ProductGrid({ products }) {
                   </div>}
                 </div>
               </Link>
+              <div>
+                    <Link
+                      to = {`/admin/product-form/edit/${product.id}`}
+                      type="submit"
+                      className="rounded-md my-5 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                      Edit Product
+                    </Link>
+                  </div>
+              </div>
             ))}
           </div>
         </div>
