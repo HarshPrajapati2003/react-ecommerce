@@ -2349,10 +2349,19 @@
           "pinCode": "382415"
         },
         {
-          "name": "hpd",
+          "name": "hpd prajapati",
           "email": "com@com.com",
+          "city": "AHMEDABAD",
+          "state": "GUJARAT",
+          "pinCode": "382481",
           "phone": "8758866537",
-          "street": "c/2 shefali app.",
+          "street": "c/2 shefali app."
+        },
+        {
+          "name": "Jack",
+          "email": "yovocap512@nasskar.com",
+          "phone": "8758866537",
+          "street": "A-7GOKUL APARTMENT, VIRATNAGAR AHMEDABAD",
           "city": "AHMEDABAD",
           "state": "GUJARAT",
           "pinCode": "382415"
@@ -2375,9 +2384,36 @@
         }
       ],
       "id": 2
+    },
+    {
+      "email": "yovocap512@nasskar.com",
+      "password": "yovocap512@nasskar.coM",
+      "addresses": [],
+      "id": 3
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "title": "MacBook Pro",
+      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+      "price": 1749,
+      "discountPercentage": 11.02,
+      "rating": 4.57,
+      "stock": 83,
+      "brand": "Apple",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+      "images": [
+        "https://i.dummyjson.com/data/products/6/1.png",
+        "https://i.dummyjson.com/data/products/6/2.jpg",
+        "https://i.dummyjson.com/data/products/6/3.png",
+        "https://i.dummyjson.com/data/products/6/4.jpg"
+      ],
+      "quantity": 1,
+      "user": 3,
+      "id": 1
+    }
+  ],
   "orders": [
     {
       "items": [
