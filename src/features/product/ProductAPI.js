@@ -57,7 +57,7 @@ export function fetchProductsByFilters(filter,sort,pagination) {
       console.log(queryString)
     }
   }
-// sort = {_sort:"price",order:"desc"}
+// sort = {_sort:"price",_order:"desc"}
   for (let key in sort) {
     queryString += `${key}=${sort[key]}&`
   }

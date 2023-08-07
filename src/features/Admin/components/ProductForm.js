@@ -3,7 +3,7 @@ import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { createProductAsync, selectBrands, selectCategories,fetchProductsByIdAsync, selectProductById, updateProductAsync, clearSelectedProduct } from "../../product/ProductSlice";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ProductForm = () => {
   const {
@@ -398,12 +398,12 @@ const ProductForm = () => {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button
-          type="button"
+        <Link
+          to = "/admin"
           className="text-sm font-semibold leading-6 text-gray-900"
         >
           Cancel
-        </button>
+        </Link>
         {selectedProduct && <button
           type="submit"
           onClick={handleDelete}

@@ -25,7 +25,7 @@
       "price": 899,
       "discountPercentage": 17.94,
       "rating": 4.44,
-      "stock": 34,
+      "stock": 0,
       "brand": "Apple",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
@@ -2494,7 +2494,7 @@
         "state": "GUJARAT",
         "pinCode": "382415"
       },
-      "status": "pending",
+      "status": "dispatched",
       "id": 6
     },
     {
@@ -2576,7 +2576,7 @@
         "state": "GUJARAT",
         "pinCode": "382415"
       },
-      "status": "pending",
+      "status": "delivered",
       "id": 7
     },
     {
@@ -2722,8 +2722,541 @@
         "state": "GUJARAT",
         "pinCode": "382415"
       },
-      "status": "pending",
+      "status": "cancelled",
       "id": 9
+    },
+    {
+      "items": [
+        {
+          "title": "Sneaker shoes",
+          "description": "Synthetic Leather Casual Sneaker shoes for Women/girls Sneakers For Women",
+          "price": 120,
+          "discountPercentage": 10.37,
+          "rating": 4.19,
+          "stock": 50,
+          "brand": "Synthetic Leather",
+          "category": "womens-shoes",
+          "thumbnail": "https://i.dummyjson.com/data/products/47/thumbnail.jpeg",
+          "images": [
+            "https://i.dummyjson.com/data/products/47/1.jpg",
+            "https://i.dummyjson.com/data/products/47/2.jpg",
+            "https://i.dummyjson.com/data/products/47/3.jpg",
+            "https://i.dummyjson.com/data/products/47/thumbnail.jpeg"
+          ],
+          "quantity": 2,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 216,
+      "totalItems": 2,
+      "user": {
+        "email": "hrsdp2683@gmail.com",
+        "password": "Harsh2003",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Harsh",
+            "email": "hrsdp2683@gmail.com",
+            "phone": "+919537407968",
+            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARATI",
+            "pinCode": "382415"
+          },
+          {
+            "name": "hpd prajapati",
+            "email": "com@com.com",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382481",
+            "phone": "8758866537",
+            "street": "c/2 shefali app."
+          },
+          {
+            "name": "Jack",
+            "email": "yovocap512@nasskar.com",
+            "phone": "8758866537",
+            "street": "A-7GOKUL APARTMENT, VIRATNAGAR AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Jack",
+        "email": "yovocap512@nasskar.com",
+        "phone": "8758866537",
+        "street": "A-7GOKUL APARTMENT, VIRATNAGAR AHMEDABAD",
+        "city": "AHMEDABAD",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "status": "cancelled",
+      "id": 10
+    },
+    {
+      "items": [
+        {
+          "title": "HP Pavilion 15-DK1056WM",
+          "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+          "price": 1099,
+          "discountPercentage": 6.18,
+          "rating": 4.43,
+          "stock": 89,
+          "brand": "HP Pavilion",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+          "images": [
+            "https://i.dummyjson.com/data/products/10/1.jpg",
+            "https://i.dummyjson.com/data/products/10/2.jpg",
+            "https://i.dummyjson.com/data/products/10/3.jpg",
+            "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 1031,
+      "totalItems": 1,
+      "user": {
+        "email": "hrsdp2683@gmail.com",
+        "password": "Harsh2003",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Harsh",
+            "email": "hrsdp2683@gmail.com",
+            "phone": "+919537407968",
+            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARATI",
+            "pinCode": "382415"
+          },
+          {
+            "name": "hpd prajapati",
+            "email": "com@com.com",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382481",
+            "phone": "8758866537",
+            "street": "c/2 shefali app."
+          },
+          {
+            "name": "Jack",
+            "email": "yovocap512@nasskar.com",
+            "phone": "8758866537",
+            "street": "A-7GOKUL APARTMENT, VIRATNAGAR AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "hpd prajapati",
+        "email": "com@com.com",
+        "city": "AHMEDABAD",
+        "state": "GUJARAT",
+        "pinCode": "382481",
+        "phone": "8758866537",
+        "street": "c/2 shefali app."
+      },
+      "status": "pending",
+      "id": 11
+    },
+    {
+      "items": [
+        {
+          "title": "Key Holder",
+          "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
+          "price": 30,
+          "discountPercentage": 2.92,
+          "rating": 4.92,
+          "stock": 54,
+          "brand": "Golden",
+          "category": "home-decoration",
+          "thumbnail": "https://i.dummyjson.com/data/products/30/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/30/1.jpg",
+            "https://i.dummyjson.com/data/products/30/2.jpg",
+            "https://i.dummyjson.com/data/products/30/3.jpg",
+            "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 29,
+      "totalItems": 1,
+      "user": {
+        "email": "hrsdp2683@gmail.com",
+        "password": "Harsh2003",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Harsh",
+            "email": "hrsdp2683@gmail.com",
+            "phone": "+919537407968",
+            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARATI",
+            "pinCode": "382415"
+          },
+          {
+            "name": "hpd prajapati",
+            "email": "com@com.com",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382481",
+            "phone": "8758866537",
+            "street": "c/2 shefali app."
+          },
+          {
+            "name": "Jack",
+            "email": "yovocap512@nasskar.com",
+            "phone": "8758866537",
+            "street": "A-7GOKUL APARTMENT, VIRATNAGAR AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Jack",
+        "email": "yovocap512@nasskar.com",
+        "phone": "8758866537",
+        "street": "A-7GOKUL APARTMENT, VIRATNAGAR AHMEDABAD",
+        "city": "AHMEDABAD",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "status": "pending",
+      "id": 12
+    },
+    {
+      "items": [
+        {
+          "title": "Royal Blue Premium Watch",
+          "description": "Men Silver Chain Royal Blue Premium Watch Latest Analog Watch",
+          "price": 50,
+          "discountPercentage": 2.56,
+          "rating": 4.89,
+          "stock": 142,
+          "brand": "SKMEI 9117",
+          "category": "mens-watches",
+          "thumbnail": "https://i.dummyjson.com/data/products/63/thumbnail.webp",
+          "images": [
+            "https://i.dummyjson.com/data/products/63/1.jpg",
+            "https://i.dummyjson.com/data/products/63/2.jpg",
+            "https://i.dummyjson.com/data/products/63/3.png",
+            "https://i.dummyjson.com/data/products/63/4.jpeg"
+          ],
+          "quantity": 1,
+          "user": 2,
+          "id": 2
+        }
+      ],
+      "totalAmount": 49,
+      "totalItems": 1,
+      "user": {
+        "email": "wwe@1234gmail.com",
+        "password": "Harsh2003",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "સલીલભાઈ સંકારભાઈ ગાવિત",
+            "email": "wwe@1234",
+            "phone": "+919537407968",
+            "street": "sdfdsfdsf",
+            "city": "dsfdsf",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 2
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "સલીલભાઈ સંકારભાઈ ગાવિત",
+        "email": "wwe@1234",
+        "phone": "+919537407968",
+        "street": "sdfdsfdsf",
+        "city": "dsfdsf",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "status": "pending",
+      "id": 13
+    },
+    {
+      "items": [
+        {
+          "title": "sublimation plain kids tank",
+          "description": "sublimation plain kids tank tops wholesale",
+          "price": 100,
+          "discountPercentage": 11.12,
+          "rating": 4.8,
+          "stock": 20,
+          "brand": "Soft Cotton",
+          "category": "tops",
+          "thumbnail": "https://i.dummyjson.com/data/products/38/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/38/1.png",
+            "https://i.dummyjson.com/data/products/38/2.jpg",
+            "https://i.dummyjson.com/data/products/38/3.jpg",
+            "https://i.dummyjson.com/data/products/38/4.jpg"
+          ],
+          "quantity": 1,
+          "user": 2,
+          "id": 2
+        }
+      ],
+      "totalAmount": 89,
+      "totalItems": 1,
+      "user": {
+        "email": "wwe@1234gmail.com",
+        "password": "Harsh2003",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "સલીલભાઈ સંકારભાઈ ગાવિત",
+            "email": "wwe@1234",
+            "phone": "+919537407968",
+            "street": "sdfdsfdsf",
+            "city": "dsfdsf",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 2
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "સલીલભાઈ સંકારભાઈ ગાવિત",
+        "email": "wwe@1234",
+        "phone": "+919537407968",
+        "street": "sdfdsfdsf",
+        "city": "dsfdsf",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "status": "pending",
+      "id": 14
+    },
+    {
+      "items": [
+        {
+          "title": "Wholesale cargo lashing Belt",
+          "description": "Wholesale cargo lashing Belt Tie Down end Ratchet strap customized strap 25mm motorcycle 1500kgs with rubber handle",
+          "price": 930,
+          "discountPercentage": 17.67,
+          "rating": 4.21,
+          "stock": 144,
+          "brand": "Xiangle",
+          "category": "motorcycle",
+          "thumbnail": "https://i.dummyjson.com/data/products/95/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/95/1.jpg",
+            "https://i.dummyjson.com/data/products/95/2.jpg",
+            "https://i.dummyjson.com/data/products/95/3.jpg",
+            "https://i.dummyjson.com/data/products/95/4.jpg",
+            "https://i.dummyjson.com/data/products/95/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 2,
+          "id": 2
+        }
+      ],
+      "totalAmount": 766,
+      "totalItems": 1,
+      "user": {
+        "email": "wwe@1234gmail.com",
+        "password": "Harsh2003",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "સલીલભાઈ સંકારભાઈ ગાવિત",
+            "email": "wwe@1234",
+            "phone": "+919537407968",
+            "street": "sdfdsfdsf",
+            "city": "dsfdsf",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 2
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "સલીલભાઈ સંકારભાઈ ગાવિત",
+        "email": "wwe@1234",
+        "phone": "+919537407968",
+        "street": "sdfdsfdsf",
+        "city": "dsfdsf",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "status": "pending",
+      "id": 15
+    },
+    {
+      "items": [
+        {
+          "title": "Gulab Powder 50 Gram",
+          "description": "Dry Rose Flower Powder Gulab Powder 50 Gram • Treats Wounds",
+          "price": 70,
+          "discountPercentage": 13.58,
+          "rating": 4.87,
+          "stock": 47,
+          "brand": "Dry Rose",
+          "category": "groceries",
+          "thumbnail": "https://i.dummyjson.com/data/products/25/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/25/1.png",
+            "https://i.dummyjson.com/data/products/25/2.jpg",
+            "https://i.dummyjson.com/data/products/25/3.png",
+            "https://i.dummyjson.com/data/products/25/4.jpg",
+            "https://i.dummyjson.com/data/products/25/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 60,
+      "totalItems": 1,
+      "user": {
+        "email": "hrsdp2683@gmail.com",
+        "password": "Harsh2003",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Harsh",
+            "email": "hrsdp2683@gmail.com",
+            "phone": "+919537407968",
+            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARATI",
+            "pinCode": "382415"
+          },
+          {
+            "name": "hpd prajapati",
+            "email": "com@com.com",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382481",
+            "phone": "8758866537",
+            "street": "c/2 shefali app."
+          },
+          {
+            "name": "Jack",
+            "email": "yovocap512@nasskar.com",
+            "phone": "8758866537",
+            "street": "A-7GOKUL APARTMENT, VIRATNAGAR AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Jack",
+        "email": "yovocap512@nasskar.com",
+        "phone": "8758866537",
+        "street": "A-7GOKUL APARTMENT, VIRATNAGAR AHMEDABAD",
+        "city": "AHMEDABAD",
+        "state": "GUJARAT",
+        "pinCode": "382415"
+      },
+      "status": "pending",
+      "id": 16
+    },
+    {
+      "items": [
+        {
+          "title": "Hyaluronic Acid Serum",
+          "description": "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
+          "price": 19,
+          "discountPercentage": 13.31,
+          "rating": 4.83,
+          "stock": 110,
+          "brand": "L'Oreal Paris",
+          "category": "skincare",
+          "thumbnail": "https://i.dummyjson.com/data/products/16/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/16/1.png",
+            "https://i.dummyjson.com/data/products/16/2.webp",
+            "https://i.dummyjson.com/data/products/16/3.jpg",
+            "https://i.dummyjson.com/data/products/16/4.jpg",
+            "https://i.dummyjson.com/data/products/16/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 16,
+      "totalItems": 1,
+      "user": {
+        "email": "hrsdp2683@gmail.com",
+        "password": "Harsh2003",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Harsh",
+            "email": "hrsdp2683@gmail.com",
+            "phone": "+919537407968",
+            "street": "C/3 SHEFALI APARTMENT, OPP. MANAV MANDIR ODHAV, AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARATI",
+            "pinCode": "382415"
+          },
+          {
+            "name": "hpd prajapati",
+            "email": "com@com.com",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382481",
+            "phone": "8758866537",
+            "street": "c/2 shefali app."
+          },
+          {
+            "name": "Jack",
+            "email": "yovocap512@nasskar.com",
+            "phone": "8758866537",
+            "street": "A-7GOKUL APARTMENT, VIRATNAGAR AHMEDABAD",
+            "city": "AHMEDABAD",
+            "state": "GUJARAT",
+            "pinCode": "382415"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "hpd prajapati",
+        "email": "com@com.com",
+        "city": "AHMEDABAD",
+        "state": "GUJARAT",
+        "pinCode": "382481",
+        "phone": "8758866537",
+        "street": "c/2 shefali app."
+      },
+      "status": "pending",
+      "id": 17
     }
   ]
 }

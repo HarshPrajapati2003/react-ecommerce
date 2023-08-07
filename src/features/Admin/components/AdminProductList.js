@@ -1,4 +1,5 @@
 import React, { useState, Fragment, useEffect } from "react";
+import { discountedPrice } from "../../../app/constants";
 import { useSelector, useDispatch } from "react-redux";
 import {
   fetchAllProductsAsync,
@@ -560,10 +561,7 @@ function ProductGrid({ products }) {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-900">
-                        $
-                        {Math.round(
-                          product.price * (1 - product.discountPercentage / 100)
-                        )}
+                        ${discountedPrice(product)}
                       </p>
                       <p className="text-sm line-through font-medium text-gray-400">
                         ${product.price}
@@ -572,6 +570,9 @@ function ProductGrid({ products }) {
                   </div>
                   {product.deleted && <div>
                     <p className="text-sm text-red-400">Product deleted</p>
+                  </div>}
+                  {product.stock<=0 && <div>
+                    <p className="text-sm text-red-400">Out of Stock</p>
                   </div>}
                 </div>
               </Link>
