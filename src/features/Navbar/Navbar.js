@@ -32,7 +32,7 @@ const Navbar = ({ children }) => {
   return (
     <>
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-gray-900">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -40,8 +40,8 @@ const Navbar = ({ children }) => {
                   <div className="flex items-center">
                     <Link to="/" className="flex-shrink-0">
                       <img
-                        className="h-8 w-8"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                        className="h-12"
+                        src="./logo.png"
                         alt="Your Company"
                       />
                     </Link>

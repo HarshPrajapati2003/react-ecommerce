@@ -27,10 +27,18 @@ import Logout from "./features/auth/components/Logout";
 import ForgotPasswordPage from "./Pages/ForgotPasswordPage";
 import AdminHome from "./Pages/AdminHome";
 import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
-import AdminProductDetail from "./features/Admin/components/AdminProductDetail";
 import AdminProductDetailPage from "./Pages/AdminProductDetailPage";
 import AdminProductFormPage from "./Pages/AdminProductFormPage";
 import AdminOrdersPage from "./Pages/AdminOrdersPage";
+import { positions, Provider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+
+
+const options = {
+  timeout: 5000,
+  position: positions.BOTTOM_LEFT
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -149,7 +157,9 @@ function App() {
   }, [dispatch, user]);
   return (
     <div className="App">
+    <Provider template={AlertTemplate} {...options}>
       <RouterProvider router={router} />
+    </Provider>
       {/* link must be inside the provider */}
     </div>
   );

@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProductsByIdAsync, selectProductById } from '../ProductSlice'
+import { fetchProductsByIdAsync, selectProductById, selectProductListStatus } from '../ProductSlice'
 import { useParams } from 'react-router-dom'
-import { addToCartAsync } from '../../cart/cartSlice'
+import { addToCartAsync, selectItems } from '../../cart/cartSlice'
 import { selectLoggedInUser } from '../../auth/authSlice'
 import { discountedPrice } from '../../../app/constants'
+import { useAlert } from 'react-alert'
+import { BallTriangle } from "react-loader-spinner";
 const colors =  [
     { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
     { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
@@ -37,14 +39,23 @@ export default function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState(sizes[2])
   const user = useSelector(selectLoggedInUser)
   const product = useSelector(selectProductById)
+  const items = useSelector(selectItems)
   const dispatch = useDispatch()
   const params = useParams()
-  
+  const alert = useAlert()
+  const status = useSelector(selectProductListStatus);
+
   const handleCart=(e)=>{
     e.preventDefault()
-    const newItem = {...product,quantity:1,user:user.id}
-    delete newItem['id']
-    dispatch(addToCartAsync(newItem))
+    if(items.findIndex(item=>item.productId===product.id)<0){
+      const newItem = {...product,productId:product.id,quantity:1,user:user.id}
+      delete newItem['id']
+      dispatch(addToCartAsync(newItem))
+      alert.success("Item added to cart");
+    }else{
+      alert.error("Item already added");
+    }
+    
   }
 
   useEffect(()=>{
@@ -53,6 +64,18 @@ export default function ProductDetail() {
   
   return (
     <div className="bg-white">
+     {status === "loading" ? (
+            <BallTriangle
+              height={100}
+              width={100}
+              radius={5}
+              color="rgb(67, 56, 202)"
+              ariaLabel="ball-triangle-loading"
+              wrapperClass={{}}
+              wrapperStyle=""
+              visible={true}
+            />
+          ) : null}
       {product && <div className="pt-6">
         <nav aria-label="Breadcrumb">
           <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -255,6 +278,7 @@ export default function ProductDetail() {
               >
                 Add to Cart
               </button>
+              
             </form>
           </div>
 

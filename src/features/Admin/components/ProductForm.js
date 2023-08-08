@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { createProductAsync, selectBrands, selectCategories,fetchProductsByIdAsync, selectProductById, updateProductAsync, clearSelectedProduct } from "../../product/ProductSlice";
+import Modal from "../../common/Modal";
 import { useForm } from "react-hook-form";
 import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
 
 const ProductForm = () => {
   const {
@@ -18,6 +20,7 @@ const ProductForm = () => {
   const dispatch = useDispatch()
   const params = useParams()
   const selectedProduct = useSelector(selectProductById)
+  const [openModal,setOpenModal]=useState(null)
 
   useEffect(()=>{
     if(params.id){
@@ -51,6 +54,7 @@ const ProductForm = () => {
     dispatch(updateProductAsync(product))
   }
   return (
+    <>
     <form noValidate onSubmit={handleSubmit((data)=>{
         console.log(data)
         const product = {...data}
@@ -406,7 +410,7 @@ const ProductForm = () => {
         </Link>
         {selectedProduct && <button
           type="submit"
-          onClick={handleDelete}
+          onClick={(e)=>{errors.preventDefault();setOpenModal(true)}}
           className="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
         >
           Delete
@@ -419,6 +423,16 @@ const ProductForm = () => {
         </button>
       </div>
     </form>
+    {selectedProduct && <Modal
+      title={`Delete ${selectedProduct.title}`}
+      message="Are you sure you want to delete this Product?"
+      dangerOption="Delete"
+      cancelOption="Cancel"
+      dangerAction={handleDelete}
+      cancelAction={()=>setOpenModal(null)}
+      showModal={openModal}
+    ></Modal>}
+    </>
   );
 };
 

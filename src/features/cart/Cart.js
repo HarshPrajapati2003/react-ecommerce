@@ -2,32 +2,57 @@ import { useSelector, useDispatch } from "react-redux";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { deleteItemFromCartAsync, selectItems, updateCartAsync } from "./cartSlice";
-import { Link } from "react-router-dom";
+import Modal from "../common/Modal";
+import {
+  deleteItemFromCartAsync,
+  selectItems,
+  updateCartAsync,
+  selectCartStatus,
+} from "./cartSlice";
+import { Link, Navigate } from "react-router-dom";
 import { discountedPrice } from "../../app/constants";
+import { BallTriangle } from "react-loader-spinner";
 
 export default function Cart() {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
-  const items = useSelector(selectItems)
-  const totalAmount = items.reduce((amount,item)=>discountedPrice(item)*item.quantity + amount , 0)
-  const totalItems =  items.reduce((total,item)=>item.quantity + total , 0)
+  const items = useSelector(selectItems);
+  const totalAmount = items.reduce(
+    (amount, item) => discountedPrice(item) * item.quantity + amount,
+    0
+  );
+  const totalItems = items.reduce((total, item) => item.quantity + total, 0);
+  const status = useSelector(selectCartStatus);
+  const [openModal,setOpenModal]=useState(null)
 
-  const handleQuantity = (e,item) => {
-    dispatch(updateCartAsync({...item,quantity: +e.target.value}))
-  } 
+  const handleQuantity = (e, item) => {
+    dispatch(updateCartAsync({ ...item, quantity: +e.target.value }));
+  };
 
-  const handleRemove = (e,id)=>{
-    dispatch(deleteItemFromCartAsync(id))
-  }
+  const handleRemove = (e, id) => {
+    dispatch(deleteItemFromCartAsync(id));
+  };
 
   return (
     <>
+      {!items.length && <Navigate to="/" replace={true}></Navigate>}
       <div className="mx-auto bg-white mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
           <h1 className="text-4xl my-5 font-bold tracking-tight text-gray-900">
             Cart
           </h1>
+          {status === "loading" ? (
+            <BallTriangle
+              height={100}
+              width={100}
+              radius={5}
+              color="rgb(67, 56, 202)"
+              ariaLabel="ball-triangle-loading"
+              wrapperClass={{}}
+              wrapperStyle=""
+              visible={true}
+            />
+          ) : null}
           <div className="flow-root">
             <ul role="list" className="-my-6 divide-y divide-gray-200">
               {items.map((item) => (
@@ -46,21 +71,22 @@ export default function Cart() {
                         <h3>
                           <a href={item.href}>{item.title}</a>
                         </h3>
-                        <p className="ml-4">$discountedPrice(item)</p>
+                        <p className="ml-4">${discountedPrice(item)}</p>
                       </div>
-                      <p className="mt-1 text-sm text-gray-500">
-                        {item.brand}
-                      </p>
+                      <p className="mt-1 text-sm text-gray-500">{item.brand}</p>
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
                       <div className="text-gray-500">
-                      <label
-                        htmlFor="quantity"
-                        className="inline mr-5 text-sm font-medium leading-6 text-gray-900"
-                      >
-                        Qty
-                      </label>
-                        <select onChange={(e)=>handleQuantity(e,item)} value={item.quantity}>
+                        <label
+                          htmlFor="quantity"
+                          className="inline mr-5 text-sm font-medium leading-6 text-gray-900"
+                        >
+                          Qty
+                        </label>
+                        <select
+                          onChange={(e) => handleQuantity(e, item)}
+                          value={item.quantity}
+                        >
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -68,11 +94,19 @@ export default function Cart() {
                           <option value="5">5</option>
                         </select>
                       </div>
-                      
 
                       <div className="flex">
+                        <Modal
+                          title={`Delete ${item.title}`}
+                          message="Are you sure you want to delete this cart item ?"
+                          dangerOption="Delete"
+                          cancelOption="Cancel"
+                          dangerAction={(e) => handleRemove(e, item.id)}
+                          cancelAction={()=>setOpenModal(null)}
+                          showModal={openModal===item.id}
+                        ></Modal>
                         <button
-                        onClick={(e)=>handleRemove(e,item.id)}
+                          onClick={e=>setOpenModal(item.id)}
                           type="button"
                           className="font-medium text-indigo-600 hover:text-indigo-500"
                         >
@@ -111,14 +145,14 @@ export default function Cart() {
             <p>
               or
               <Link to="/">
-              <button
-                type="button"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-                onClick={() => setOpen(false)}
-              >
-                Continue Shopping
-                <span aria-hidden="true"> &rarr;</span>
-              </button>
+                <button
+                  type="button"
+                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                  onClick={() => setOpen(false)}
+                >
+                  Continue Shopping
+                  <span aria-hidden="true"> &rarr;</span>
+                </button>
               </Link>
             </p>
           </div>

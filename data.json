@@ -103,7 +103,7 @@
         "https://i.dummyjson.com/data/products/6/1.png",
         "https://i.dummyjson.com/data/products/6/2.jpg",
         "https://i.dummyjson.com/data/products/6/3.png",
-        "https://i.dummyjson.com/data/products/6/4.jpg"
+        "https://i.dummyjson.com/data/products/6/thumbnail.png"
       ]
     },
     {
@@ -1844,9 +1844,9 @@
       "description": "Crystal chandelier maria theresa for 13 light",
       "brand": "YIOSI",
       "category": "lighting",
-      "price": "12",
-      "discountPercentage": "12",
-      "stock": "12",
+      "price": 12,
+      "discountPercentage": 12,
+      "stock": 12,
       "thumbnail": "https://i.dummyjson.com/data/products/100/thumbnail.jpg",
       "images": [
         "https://i.dummyjson.com/data/products/100/1.jpg",
@@ -1854,7 +1854,8 @@
         "https://i.dummyjson.com/data/products/100/3.jpg",
         "https://i.dummyjson.com/data/products/100/thumbnail.jpg"
       ],
-      "id": 101
+      "id": 101,
+      "rating": 0
     }
   ],
   "brands": [
@@ -2439,6 +2440,26 @@
       "quantity": 1,
       "user": 3,
       "id": 1
+    },
+    {
+      "title": "Huawei P30",
+      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+      "price": 499,
+      "discountPercentage": 10.58,
+      "rating": 4.09,
+      "stock": 32,
+      "brand": "Huawei",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/5/1.jpg",
+        "https://i.dummyjson.com/data/products/5/2.jpg",
+        "https://i.dummyjson.com/data/products/5/3.jpg"
+      ],
+      "productId": 5,
+      "quantity": 1,
+      "user": 1,
+      "id": 2
     }
   ],
   "orders": [

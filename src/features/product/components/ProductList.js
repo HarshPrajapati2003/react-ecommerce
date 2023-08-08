@@ -1,6 +1,7 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { discountedPrice } from "../../../app/constants";
+import { BallTriangle } from "react-loader-spinner";
 import {
   fetchAllProductsAsync,
   fetchAllProductsByFilterAsync,
@@ -9,6 +10,7 @@ import {
   selectAllProducts,
   selectBrands,
   selectCategories,
+  selectProductListStatus,
   selectTotalItems,
 } from "../ProductSlice";
 import {
@@ -34,8 +36,6 @@ const sortOptions = [
   { name: "Price: Low to High", sort: "price", order: "asc", current: false },
   { name: "Price: High to Low", sort: "price", order: "desc", current: false },
 ];
-
-
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -81,17 +81,18 @@ export default function ProductList() {
   const brands = useSelector(selectBrands);
   const categories = useSelector(selectCategories);
   const totalItems = useSelector(selectTotalItems);
+  const status = useSelector(selectProductListStatus);
 
   const filters = [
     {
       id: "category",
       name: "Category",
-      options:categories
+      options: categories,
     },
     {
       id: "brand",
       name: "Brands",
-      options: brands
+      options: brands,
     },
   ];
 
@@ -139,8 +140,8 @@ export default function ProductList() {
   }, [totalItems, sort]);
 
   useEffect(() => {
-    dispatch(fetchBrandsAsync())
-    dispatch(fetchCategoriesAsync())
+    dispatch(fetchBrandsAsync());
+    dispatch(fetchCategoriesAsync());
   }, []);
 
   return (
@@ -229,11 +230,14 @@ export default function ProductList() {
             </h2>
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-              <DesktopFilter handleFilter={handleFilter} filters={filters}></DesktopFilter>
+              <DesktopFilter
+                handleFilter={handleFilter}
+                filters={filters}
+              ></DesktopFilter>
 
               {/* Product grid */}
               <div className="lg:col-span-3">
-                <ProductGrid products={products}></ProductGrid>
+                <ProductGrid products={products} status={status}></ProductGrid>
               </div>
               {/* Product Grid end */}
             </div>
@@ -259,7 +263,7 @@ function MobileFilter({
   mobileFiltersOpen,
   setMobileFiltersOpen,
   handleFilter,
-  filters
+  filters,
 }) {
   return (
     <>
@@ -377,7 +381,7 @@ function MobileFilter({
   );
 }
 
-function DesktopFilter({ handleFilter,filters }) {
+function DesktopFilter({ handleFilter, filters }) {
   return (
     <>
       {/* Filters */}
@@ -436,13 +440,25 @@ function DesktopFilter({ handleFilter,filters }) {
   );
 }
 
-function ProductGrid({ products }) {
+function ProductGrid({ products,status }) {
   return (
     <>
       {/* this is product list page */}
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+          {status === "loading" ? (
+        <BallTriangle
+          height={100}
+          width={100}
+          radius={5}
+          color="rgb(67, 56, 202)"
+          ariaLabel="ball-triangle-loading"
+          wrapperClass={{}}
+          wrapperStyle=""
+          visible={true}
+        />
+      ) : null}
             {products.map((product) => (
               <Link to={`/product-detail/${product.id}`}>
                 <div
@@ -481,12 +497,16 @@ function ProductGrid({ products }) {
                       </p>
                     </div>
                   </div>
-                  {product.deleted && <div>
-                    <p className="text-sm text-red-400">Product deleted</p>
-                  </div>}
-                  {product.stock<=0 && <div>
-                    <p className="text-sm text-red-400">Out of Stock</p>
-                  </div>}
+                  {product.deleted && (
+                    <div>
+                      <p className="text-sm text-red-400">Product deleted</p>
+                    </div>
+                  )}
+                  {product.stock <= 0 && (
+                    <div>
+                      <p className="text-sm text-red-400">Out of Stock</p>
+                    </div>
+                  )}
                 </div>
               </Link>
             ))}
