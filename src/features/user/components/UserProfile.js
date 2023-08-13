@@ -12,7 +12,7 @@ export default function UserProfile() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: {errors},     
     setValue,
   } = useForm();
 
