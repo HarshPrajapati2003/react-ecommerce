@@ -9,7 +9,7 @@ import {
 } from "../features/cart/cartSlice";
 import { Link,Navigate} from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { updateUserAsync } from "../features/auth/authSlice";
+import { updateUserAsync }from "../features/user/userSlice";
 import { createOrderAsync, selectCurrentOrder } from "../features/order/orderSlice";
 import { selectUserInfo } from "../features/user/userSlice";
 import { discountedPrice } from "../app/constants";
@@ -46,8 +46,14 @@ const Checkout = () => {
   }
 
   const handleOrder = (e)=>{
-    const order = {items,totalAmount,totalItems,user:user.id,paymentMethod,selectedAddress,status:'pending'}
-    dispatch(createOrderAsync(order))
+    if (selectedAddress && paymentMethod) {
+      const order = {items,totalAmount,totalItems,user:user.id,paymentMethod,selectedAddress,status:'pending'}
+      dispatch(createOrderAsync(order))
+    } else {
+      // TODO : we can use proper messaging popup here
+      alert('Enter Address and Payment method');
+    }
+    
     // TODO : redirect to order-success Page
     // TODO : clear cart after order
     // TODO : on server change the stock number of items

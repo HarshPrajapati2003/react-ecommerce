@@ -6,6 +6,7 @@ import Modal from "../../common/Modal";
 import { useForm } from "react-hook-form";
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
+import { useAlert } from "react-alert";
 
 const ProductForm = () => {
   const {
@@ -21,6 +22,7 @@ const ProductForm = () => {
   const params = useParams()
   const selectedProduct = useSelector(selectProductById)
   const [openModal,setOpenModal]=useState(null)
+  const alert = useAlert()
 
   useEffect(()=>{
     if(params.id){
@@ -73,8 +75,12 @@ const ProductForm = () => {
             product.id = params.id
             product.rating = selectedProduct.rating || 0
             dispatch(updateProductAsync(product))
+            alert.success("Product Updated Successfully")
+            reset()
         }else{
             dispatch(createProductAsync(product))
+            alert.success("Product Created Successfully")
+            reset()
         }
        
 
