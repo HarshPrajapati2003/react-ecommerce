@@ -17,7 +17,7 @@ import ProductDetailPage from "./Pages/ProductDetailPage";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchItemsByUserIdAsync } from "./features/cart/cartSlice";
-import { selectLoggedInUser } from "./features/auth/authSlice";
+import { checkAuthAsync, selectLoggedInUser, selectUserCheked } from "./features/auth/authSlice";
 import PageNotFound from "./Pages/404";
 import OrderSuccessPage from "./Pages/OrderSuccessPage";
 import UserOrderPage from "./Pages/UserOrderPage";
@@ -149,6 +149,12 @@ const router = createBrowserRouter([
 function App() {
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
+  const userChecked = useSelector(selectUserCheked)
+
+  useEffect(()=>{
+    dispatch(checkAuthAsync())
+  },[])
+
   useEffect(() => {
     if (user) {
       dispatch(fetchItemsByUserIdAsync());
@@ -158,9 +164,9 @@ function App() {
   }, [dispatch, user]);
   return (
     <div className="App">
-    <Provider template={AlertTemplate} {...options}>
+    {userChecked && <Provider template={AlertTemplate} {...options}>
       <RouterProvider router={router} />
-    </Provider>
+    </Provider>}
       {/* link must be inside the provider */}
     </div>
   );
