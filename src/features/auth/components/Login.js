@@ -75,7 +75,7 @@ export default function Login() {
               )}
           </div>
           {error && (
-                <p className="text-red-500">{error.message}</p>
+                <p className="text-red-500">{error || error.message}</p>
               )}
         </div>
 

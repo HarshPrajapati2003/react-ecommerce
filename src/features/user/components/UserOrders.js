@@ -1,19 +1,20 @@
 import React, { useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchLoggedInUserOrdersAsync, selectUserInfo,selectUserOrders } from "../userSlice";
+import { fetchLoggedInUserOrdersAsync, selectUserInfo,selectUserInfoStatus,selectUserOrders } from "../userSlice";
 import { discountedPrice } from "../../../app/constants";
+import { BallTriangle } from "react-loader-spinner";
 export default function UserOrders() {
   const dispatch = useDispatch();
-  const userInfo = useSelector(selectUserInfo);
   const orders = useSelector(selectUserOrders);
+  const status = useSelector(selectUserInfoStatus);
 
   useEffect(() => {
-    dispatch(fetchLoggedInUserOrdersAsync(userInfo.id));
-  }, [dispatch,userInfo]);
+    dispatch(fetchLoggedInUserOrdersAsync());
+  }, [dispatch]);
 
   return (
     <>
-      {orders.map((order) => (
+      {orders && orders.map((order) => (
         <div>
           <div className="mx-auto bg-white mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
@@ -105,6 +106,18 @@ export default function UserOrders() {
           </div>
         </div>
       ))}
+      {status === "loading" ? (
+            <BallTriangle
+              height={100}
+              width={100}
+              radius={5}
+              color="rgb(67, 56, 202)"
+              ariaLabel="ball-triangle-loading"
+              wrapperClass={{}}
+              wrapperStyle=""
+              visible={true}
+            />
+          ) : null}
     </>
   );
 }
