@@ -1,6 +1,7 @@
 {
   "name": "react-ecommerce",
   "version": "0.1.0",
+  "proxy":"http://localhost:8080", 
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.16",
@@ -27,7 +28,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set HTTPS=true&&set SSL_CRT_FILE=C:/Windows/System32/cert.crt&&set SSL_KEY_FILE=C:/Windows/System32/cert.key&&react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
