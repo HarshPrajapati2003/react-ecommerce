@@ -33,6 +33,7 @@ import AdminOrdersPage from "./Pages/AdminOrdersPage";
 import { positions, Provider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import StripeCheckout from "./Pages/StripeCheckout";
+import ResetPasswordPage from "./Pages/ResetPasswordPage";
 
 
 const options = {
@@ -148,6 +149,10 @@ const router = createBrowserRouter([
   {
     path: "/forgot-password",
     element: <ForgotPasswordPage></ForgotPasswordPage>,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPasswordPage></ResetPasswordPage>,
   },
   {
     path: "*",
