@@ -5,7 +5,7 @@ import Footer from "../features/common/Footer";
 const ProductDetailPage = () => {
   return (
     <div>
-    <Navbar>
+  <Navbar>
       <ProductDetail></ProductDetail>
       </Navbar>
       <Footer></Footer>

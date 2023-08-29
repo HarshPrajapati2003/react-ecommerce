@@ -1,5 +1,4 @@
 import React, { useState, Fragment, useEffect } from "react";
-import { discountedPrice } from "../../../app/constants";
 import { useSelector, useDispatch } from "react-redux";
 import {
   fetchAllProductsAsync,
@@ -30,8 +29,8 @@ import {
 
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
-  { name: "Price: Low to High", sort: "price", order: "asc", current: false },
-  { name: "Price: High to Low", sort: "price", order: "desc", current: false },
+  { name: "Price: Low to High", sort: "discountedPrice", order: "asc", current: false },
+  { name: "Price: High to Low", sort: "discountedPrice", order: "desc", current: false },
 ];
 
 function classNames(...classes) {
@@ -561,7 +560,7 @@ function ProductGrid({ products }) {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-900">
-                        ${discountedPrice(product)}
+                        ${product.discountedPrice}
                       </p>
                       <p className="text-sm line-through font-medium text-gray-400">
                         ${product.price}

@@ -5,7 +5,7 @@ import Navbar from "../features/Navbar/Navbar";
 const AdminOrdersPage = () => {
   return (
     <div>
-      <Navbar>
+     <Navbar>
         <AdminOrders></AdminOrders>
       </Navbar>
     </div>

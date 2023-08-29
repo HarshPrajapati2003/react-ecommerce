@@ -41,8 +41,7 @@ export function fetchProductsByFilters(filter, sort, pagination, admin) {
   for (let key in filter) {
     const categoryValues = filter[key];
     if (categoryValues.length > 0) {
-      const lastCategoryValue = categoryValues[categoryValues.length - 1];
-      queryString += `${key}=${lastCategoryValue}&`;
+      queryString += `${key}=${categoryValues}&`;
       console.log(queryString);
     }
   }

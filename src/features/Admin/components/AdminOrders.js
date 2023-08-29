@@ -13,7 +13,6 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
 } from "@heroicons/react/24/outline";
-import { discountedPrice } from "../../../app/constants";
 import Pagination from "../../common/Pagination";
 
 const AdminOrders = () => {
@@ -164,7 +163,7 @@ const AdminOrders = () => {
                           </div>
                           <span>
                             {item.product.title} - {item.quantity} - $
-                            {discountedPrice(item.product)}
+                            {item.product.discountedPrice}
                           </span>
                         </div>
                       ))}

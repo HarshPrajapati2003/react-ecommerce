@@ -5,16 +5,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchProductsByIdAsync, selectProductById, selectProductListStatus } from '../ProductSlice'
 import { useParams } from 'react-router-dom'
 import { addToCartAsync, selectItems } from '../../cart/cartSlice'
-import { discountedPrice } from '../../../app/constants'
 import { useAlert } from 'react-alert'
 import { BallTriangle } from "react-loader-spinner";
 
-// const highlights= [
-//   'Hand cut and sewn locally',
-//   'Dyed with our proprietary colors',
-//   'Pre-washed & pre-shrunk',
-//   'Ultra-soft 100% cotton',
-// ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -41,8 +34,7 @@ export default function ProductDetail() {
         newItem.size = selectedSize;
       }
       delete newItem['id']
-      dispatch(addToCartAsync(newItem))
-      alert.success("Item added to cart");
+      dispatch(addToCartAsync({newItem,alert}))
     }else{
       alert.error("Item already added");
     }
@@ -142,7 +134,7 @@ export default function ProductDetail() {
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product information</h2>
             <p className="text-xl line-through tracking-tight text-gray-900">{product.price}</p>
-            <p className="text-3xl tracking-tight text-gray-900">{discountedPrice(product)}</p>
+            <p className="text-3xl tracking-tight text-gray-900">{product.discountedPrice}</p>
             {/* Reviews */}
             <div className="mt-6">
               <h3 className="sr-only">Reviews</h3>
@@ -284,7 +276,8 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            {product.highlights && <div className="mt-10">
+            {product.highlights.length>0 && 
+            <div className="mt-10">
               <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
