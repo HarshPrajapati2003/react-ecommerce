@@ -8,34 +8,20 @@ import { addToCartAsync, selectItems } from '../../cart/cartSlice'
 import { discountedPrice } from '../../../app/constants'
 import { useAlert } from 'react-alert'
 import { BallTriangle } from "react-loader-spinner";
-const colors =  [
-    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-  ]
-const sizes = [
-    { name: 'XXS', inStock: false },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: '2XL', inStock: true },
-    { name: '3XL', inStock: true },
-  ]
-const highlights= [
-  'Hand cut and sewn locally',
-  'Dyed with our proprietary colors',
-  'Pre-washed & pre-shrunk',
-  'Ultra-soft 100% cotton',
-]
+
+// const highlights= [
+//   'Hand cut and sewn locally',
+//   'Dyed with our proprietary colors',
+//   'Pre-washed & pre-shrunk',
+//   'Ultra-soft 100% cotton',
+// ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function ProductDetail() {
-  const [selectedColor, setSelectedColor] = useState(colors[0])
-  const [selectedSize, setSelectedSize] = useState(sizes[2])
+  const[selectedColor,setSelectedColor]=useState();
+  const[selectedSize,setSelectedSize]=useState();
   const product = useSelector(selectProductById)
   const items = useSelector(selectItems)
   const dispatch = useDispatch()
@@ -47,6 +33,13 @@ export default function ProductDetail() {
     e.preventDefault()
     if(items.findIndex(item=>item.product.id===product.id)<0){
       const newItem = {product:product.id,quantity:1}
+      if (selectedColor) {
+        console.log("selected color")
+        newItem.color = selectedColor;
+      }
+      if (selectedSize) {
+        newItem.size = selectedSize;
+      }
       delete newItem['id']
       dispatch(addToCartAsync(newItem))
       alert.success("Item added to cart");
@@ -55,9 +48,10 @@ export default function ProductDetail() {
     }
     
   }
-
+  
   useEffect(()=>{
     dispatch(fetchProductsByIdAsync(params.id))
+    console.log(product)
   },[dispatch,params])
   
   return (
@@ -170,15 +164,15 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            <form className="mt-10">
+             <form className="mt-10">
               {/* Colors */}
-              <div>
+              {product.colors && product.colors.length>0 &&<div>
                 <h3 className="text-sm font-medium text-gray-900">Color</h3>
 
                 <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
                   <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
                   <div className="flex items-center space-x-3">
-                    {colors.map((color) => (
+                    {product.colors.map((color) => (
                       <RadioGroup.Option
                         key={color.name}
                         value={color}
@@ -205,10 +199,10 @@ export default function ProductDetail() {
                     ))}
                   </div>
                 </RadioGroup>
-              </div>
+              </div>}
 
               {/* Sizes */}
-              <div className="mt-10">
+              {product.sizes && product.sizes.length>0 &&<div className="mt-10">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-medium text-gray-900">Size</h3>
                   <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
@@ -219,7 +213,7 @@ export default function ProductDetail() {
                 <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">
                   <RadioGroup.Label className="sr-only">Choose a size</RadioGroup.Label>
                   <div className="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                    {sizes.map((size) => (
+                    {product.sizes.map((size) => (
                       <RadioGroup.Option
                         key={size.name}
                         value={size}
@@ -267,7 +261,7 @@ export default function ProductDetail() {
                     ))}
                   </div>
                 </RadioGroup>
-              </div>
+              </div>}
 
               <button
               onClick={handleCart}
@@ -290,19 +284,18 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            <div className="mt-10">
+            {product.highlights && <div className="mt-10">
               <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                  {highlights.map((highlight) => (
+                  {product.highlights.map((highlight) => (
                     <li key={highlight} className="text-gray-400">
                       <span className="text-gray-600">{highlight}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
+            </div>}
 
             <div className="mt-10">
               <h2 className="text-sm font-medium text-gray-900">Details</h2>

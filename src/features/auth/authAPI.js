@@ -52,13 +52,22 @@ export function checkAuth() {
   });
 }
 
-export function signOut(userId) {
-  return new Promise(async (resolve) => {
-    // TODO: on server we will remove user session info
-    console.log("success");
-    resolve({ data: "success" });
+export function signOut() {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const response = await fetch("/auth/logout");
+      if (response.ok) {
+        // const data = await response.json();
+        resolve({ data:'success' });
+      } else {
+        const error = await response.text();
+        reject(error);
+      }
+    } catch (error) {
+      reject(error);
+    }
   });
-}
+} 
 
 export function resetPasswordRequest(email) {
   return new Promise(async (resolve, reject) => {
