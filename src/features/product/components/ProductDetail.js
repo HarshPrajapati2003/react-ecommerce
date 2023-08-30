@@ -34,7 +34,8 @@ export default function ProductDetail() {
         newItem.size = selectedSize;
       }
       delete newItem['id']
-      dispatch(addToCartAsync({newItem,alert}))
+      dispatch(addToCartAsync(newItem))
+      alert.success("Item added to cart");
     }else{
       alert.error("Item already added");
     }
@@ -156,7 +157,7 @@ export default function ProductDetail() {
               </div>
             </div>
 
-             <form className="mt-10">
+             <form className="mt-10 contents">
               {/* Colors */}
               {product.colors && product.colors.length>0 &&<div>
                 <h3 className="text-sm font-medium text-gray-900">Color</h3>

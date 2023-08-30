@@ -37,7 +37,7 @@ export default function Login() {
               );
               console.log(data);
             })}
-            className="space-y-6"
+            className="space-y-6 contents"
             method="POST"
           >
             <div>

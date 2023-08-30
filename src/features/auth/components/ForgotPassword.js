@@ -27,7 +27,7 @@ export default function ForgotPassword() {
       <form noValidate onSubmit={handleSubmit((data) => {
             console.log(data);
             dispatch(resetPasswordRequestAsync(data.email))
-          })} className="space-y-6" method="POST">
+          })} className="space-y-6 contents" method="POST">
         <div>
           <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
             Email address

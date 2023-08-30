@@ -11,7 +11,6 @@ import {
   selectCartLoaded,
 } from "./cartSlice";
 import { Link, Navigate } from "react-router-dom";
-import { discountedPrice } from "../../app/constants";
 import { BallTriangle } from "react-loader-spinner";
 
 export default function Cart() {

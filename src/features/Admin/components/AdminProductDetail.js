@@ -157,7 +157,7 @@ export default function AdminProductDetail() {
               </div>
             </div>
 
-             <form className="mt-10">
+             <form className="contents mt-10">
               {/* Colors */}
               {product.colors && product.colors.length>0 &&<div>
                 <h3 className="text-sm font-medium text-gray-900">Color</h3>
