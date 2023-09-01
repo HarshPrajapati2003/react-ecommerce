@@ -80,7 +80,7 @@ const ProductForm = () => {
   }
   return (
     <>
-    <form noValidate onSubmit={handleSubmit((data)=>{
+    <form noValidate class="bg-white py-12 px-5 mt-12 w-auto" onSubmit={handleSubmit((data)=>{
         console.log(data)
         const product = {...data}
         product.images = [product.image1,product.image2,product.image3,product.thumbnail]

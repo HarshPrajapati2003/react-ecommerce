@@ -32,8 +32,18 @@ import Pagination from "../../common/Pagination";
 
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
-  { name: "Price: Low to High", sort: "discountedPrice", order: "asc", current: false },
-  { name: "Price: High to Low", sort: "discountedPrice", order: "desc", current: false },
+  {
+    name: "Price: Low to High",
+    sort: "discountedPrice",
+    order: "asc",
+    current: false,
+  },
+  {
+    name: "Price: High to Low",
+    sort: "discountedPrice",
+    order: "desc",
+    current: false,
+  },
 ];
 
 function classNames(...classes) {
@@ -65,6 +75,7 @@ export default function ProductList() {
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
 
   const handleFilter = (e, section, option) => {
     console.log(e.target.checked);
@@ -97,9 +108,11 @@ export default function ProductList() {
 
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
-    dispatch(fetchAllProductsByFilterAsync({ filter, sort, pagination }));
+    dispatch(
+      fetchAllProductsByFilterAsync({ filter, sort, pagination, search })
+    );
     // TODO : server will filter deleted products
-  }, [dispatch, filter, sort, page]);
+  }, [dispatch, filter, sort, page, search]);
 
   useEffect(() => {
     setPage(1);
@@ -121,11 +134,41 @@ export default function ProductList() {
         ></MobileFilter>
 
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-2">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-              All Products
-            </h1>
-
+          <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-4">
+            <form className="me-1" style={{ width: "60%" }}>
+              <label
+                htmlFor="default-search"
+                className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+              >
+                Search
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg
+                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="search"
+                  id="default-search"
+                  className="block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-600 focus:border-indigo-600 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-600 dark:focus:border-indigo-600"
+                  placeholder="Search Product"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
+            </form>
             <div className="flex items-center">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
@@ -174,13 +217,6 @@ export default function ProductList() {
 
               <button
                 type="button"
-                className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
-              >
-                <span className="sr-only">View grid</span>
-                <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-              </button>
-              <button
-                type="button"
                 className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
                 onClick={() => setMobileFiltersOpen(true)}
               >
@@ -203,7 +239,17 @@ export default function ProductList() {
 
               {/* Product grid */}
               <div className="lg:col-span-3">
-                <ProductGrid products={products} status={status}></ProductGrid>
+                {/* {products!==null || status!=='loading' ? ( */}
+                  <ProductGrid
+                    products={products}
+                    status={status}
+                  ></ProductGrid>
+                {/* ) : (
+                  <h2 className="text-red-500 text-center">
+                    Sorry, Product not Found you can try to find your Product by
+                    Category and Brand Name
+                  </h2>
+                )} */}
               </div>
               {/* Product Grid end */}
             </div>
@@ -406,25 +452,25 @@ function DesktopFilter({ handleFilter, filters }) {
   );
 }
 
-function ProductGrid({ products,status }) {
+function ProductGrid({ products, status }) {
   return (
     <>
       {/* this is product list page */}
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-          {status === "loading" ? (
-        <BallTriangle
-          height={100}
-          width={100}
-          radius={5}
-          color="rgb(67, 56, 202)"
-          ariaLabel="ball-triangle-loading"
-          wrapperClass={{}}
-          wrapperStyle=""
-          visible={true}
-        />
-      ) : null}
+            {status === "loading" ? (
+              <BallTriangle
+                height={100}
+                width={100}
+                radius={5}
+                color="rgb(67, 56, 202)"
+                ariaLabel="ball-triangle-loading"
+                wrapperClass={{}}
+                wrapperStyle=""
+                visible={true}
+              />
+            ) : null}
             {products.map((product) => (
               <Link to={`/product-detail/${product.id}`}>
                 <div

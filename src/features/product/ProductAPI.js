@@ -34,7 +34,7 @@ export function updateProduct(update) {
   });
 }
 
-export function fetchProductsByFilters(filter, sort, pagination, admin) {
+export function fetchProductsByFilters(filter, sort, pagination,search, admin) {
   // filter = {"category":["smartphone","laptops"]}
 
   let queryString = "";
@@ -56,6 +56,10 @@ export function fetchProductsByFilters(filter, sort, pagination, admin) {
 
   if (admin) {
     queryString += `admin=true`;
+  }
+
+  if(search){
+    queryString += `title=${search}&`;
   }
 
   return new Promise(async (resolve) => {
