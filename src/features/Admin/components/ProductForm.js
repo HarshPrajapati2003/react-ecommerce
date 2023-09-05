@@ -80,7 +80,7 @@ const ProductForm = () => {
   }
   return (
     <>
-    <form noValidate class="bg-white py-12 px-5 mt-12 w-auto" onSubmit={handleSubmit((data)=>{
+    <form noValidate class="bg-white py-12 px-5 mt-12 w-auto contents" onSubmit={handleSubmit((data)=>{
         console.log(data)
         const product = {...data}
         product.images = [product.image1,product.image2,product.image3,product.thumbnail]
@@ -468,7 +468,7 @@ const ProductForm = () => {
           </div>
         </div>
 
-        <div className="border-b border-gray-900/10 pb-12">
+        {/* <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
             Extra
           </h2>
@@ -545,7 +545,7 @@ const ProductForm = () => {
               </div>
             </fieldset>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">

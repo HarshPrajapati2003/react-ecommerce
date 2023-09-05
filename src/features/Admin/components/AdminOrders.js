@@ -243,12 +243,12 @@ const AdminOrders = () => {
 
                     <td className="py-3 px-0 text-center">
                       <div className="flex item-center justify-center">
-                        <div className="w-6 mr-4 transform hover:text-purple-500 hover:scale-110">
+                        {/* <div className="w-6 mr-4 transform hover:text-purple-500 hover:scale-110">
                           <EyeIcon
                             className="w-5 h-5"
                             onClick={(e) => handleShow(order)}
                           ></EyeIcon>
-                        </div>
+                        </div> */}
                         <div className="w-6 mr-2 transform hover:text-purple-500 hover:scale-110">
                           <PencilIcon
                             className="w-5 h-5"

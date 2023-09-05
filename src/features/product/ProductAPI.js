@@ -55,7 +55,7 @@ export function fetchProductsByFilters(filter, sort, pagination,search, admin) {
   }
 
   if (admin) {
-    queryString += `admin=true`;
+    queryString += `admin=true&`;
   }
 
   if(search){

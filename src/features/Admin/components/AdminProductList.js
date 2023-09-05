@@ -37,39 +37,6 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const oldproducts = [
-  {
-    id: 1,
-    name: "Basic Tee",
-    href: "#",
-    thumbnail:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
-  },
-  {
-    id: 2,
-    name: "Basic Tee",
-    href: "#",
-    thumbnail:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
-  },
-  {
-    id: 3,
-    name: "Basic Tee",
-    href: "#",
-    thumbnail:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
-  },
-];
-
 export default function AdminProductList() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const dispatch = useDispatch();
@@ -94,6 +61,7 @@ export default function AdminProductList() {
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
 
   const handleFilter = (e, section, option) => {
     console.log(e.target.checked);
@@ -126,8 +94,8 @@ export default function AdminProductList() {
 
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
-    dispatch(fetchAllProductsByFilterAsync({ filter, sort, pagination,admin:true}));
-  }, [dispatch, filter, sort, page]);
+    dispatch(fetchAllProductsByFilterAsync({ filter, sort, pagination,search,admin:true}));
+  }, [dispatch, filter,search, sort, page]);
 
   useEffect(() => {
     setPage(1);
@@ -150,9 +118,40 @@ export default function AdminProductList() {
 
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-2">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-              All Products
-            </h1>
+          <div className="me-1" style={{ width: "60%" }}>
+              <label
+                htmlFor="default-search"
+                className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+              >
+                Search
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg
+                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"dispatch
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  id="default-search"
+                  className="block w-full p-3 pl-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-600 focus:border-indigo-600 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-indigo-600 dark:focus:border-indigo-600"
+                  placeholder="Search Product"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
+            </div>
 
             <div className="flex items-center">
               <Menu as="div" className="relative inline-block text-left">

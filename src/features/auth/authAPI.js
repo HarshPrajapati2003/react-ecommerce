@@ -81,7 +81,7 @@ export function resetPasswordRequest(email) {
       });
       if (response.ok) {
         // const data = await response.json();
-        console.log(response)
+        // console.log(response)
         resolve({ response });
       } else {
         const error = await response.text();

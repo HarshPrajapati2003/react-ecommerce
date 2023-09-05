@@ -1,0 +1,27 @@
+.animated{
+    display: flex !important;
+    align-items: center !important
+} 
+
+.carousel .carousel-status {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    font-family: cursive!important;
+    color: rgba(79, 70, 229, 1)!important;
+    font-weight: bold!important;
+    font-size: 10px!important;
+    text-shadow: 1px 1px 1px rgba(230, 164, 145, 0.9)!important;
+    top: 2px !important;
+    right: 5px !important;
+   
+}
+.carousel .control-dots .dot{
+    background: #4f46e5 !important;
+}
+
+.slider-wrapper{
+    border: 1px solid #eae8e8 !important;
+    border-radius: 10px !important;
+}

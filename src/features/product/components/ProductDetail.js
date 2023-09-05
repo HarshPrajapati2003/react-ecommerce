@@ -7,7 +7,9 @@ import { useParams } from 'react-router-dom'
 import { addToCartAsync, selectItems } from '../../cart/cartSlice'
 import { useAlert } from 'react-alert'
 import { BallTriangle } from "react-loader-spinner";
-
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import "../../../App.css"
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -46,6 +48,22 @@ export default function ProductDetail() {
     dispatch(fetchProductsByIdAsync(params.id))
     console.log(product)
   },[dispatch,params])
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    // Function to update the window width when the window is resized
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    // Attach the event listener when the component mounts
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   
   return (
     <div className="bg-white">
@@ -92,7 +110,8 @@ export default function ProductDetail() {
         </nav>
 
         {/* Image gallery */}
-        <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+        <div className="mx-auto mt-6 max-w-2xl px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8">
+        {windowWidth >1050 && (<>
           <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
             <img
               src={product.images[0]}
@@ -123,6 +142,22 @@ export default function ProductDetail() {
               className="h-full w-full object-cover object-center"
             />
           </div>
+        </>)}
+          {windowWidth <= 1050 && <div>
+          <Carousel
+            showArrows={true}
+            showThumbs={false}
+            infiniteLoop={true}
+            autoPlay={true}
+            interval={3000} 
+          >
+      {product.images.map((image, index) => (
+        <div key={index}>
+          <img src={image} alt={`Product ${index + 1}`} />
+        </div>
+      ))}
+          </Carousel>
+          </div>}
         </div>
 
         {/* Product info */}

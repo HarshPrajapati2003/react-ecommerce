@@ -8,6 +8,7 @@ import {
 } from "../userSlice";
 
 import { BallTriangle } from "react-loader-spinner";
+import ReactStars from "react-rating-stars-component";
 export default function UserOrders() {
   const dispatch = useDispatch();
   const orders = useSelector(selectUserOrders);
@@ -16,6 +17,10 @@ export default function UserOrders() {
   useEffect(() => {
     dispatch(fetchLoggedInUserOrdersAsync());
   }, [dispatch]);
+
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  };
 
   return (
     <>
@@ -70,7 +75,19 @@ export default function UserOrders() {
                               </label>
                             </div>
 
-                            <div className="flex"></div>
+                            {order.status==='delivered' && <div className="flex">
+                            <div className="text-red-600 hidden md:block">Give Your Product Review :  </div>
+                            <ReactStars
+                              count={5}
+                              onChange={ratingChanged}
+                              size={24}
+                              isHalf={true}
+                              emptyIcon={<i className="far fa-star"></i>}
+                              halfIcon={<i className="fa fa-star-half-alt"></i>}
+                              fullIcon={<i className="fa fa-star"></i>}
+                              activeColor="#ffd700"
+                            />
+                            </div>}
                           </div>
                         </div>
                       </li>

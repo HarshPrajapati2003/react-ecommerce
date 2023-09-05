@@ -135,7 +135,7 @@ export default function ProductList() {
 
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-4">
-            <form className="me-1" style={{ width: "60%" }}>
+            <div className="me-1" style={{ width: "60%" }}>
               <label
                 htmlFor="default-search"
                 className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -161,14 +161,14 @@ export default function ProductList() {
                   </svg>
                 </div>
                 <input
-                  type="search"
+                  type="text"
                   id="default-search"
-                  className="block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-600 focus:border-indigo-600 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-600 dark:focus:border-indigo-600"
+                  className="block w-full p-3 pl-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-600 focus:border-indigo-600 bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-indigo-600 dark:focus:border-indigo-600"
                   placeholder="Search Product"
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
-            </form>
+            </div>
             <div className="flex items-center">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
@@ -496,7 +496,7 @@ function ProductGrid({ products, status }) {
                         </div>
                       </h3>
                       <p className="mt-1 text-sm text-gray-500">
-                        <StarIcon className="w-6 h-6 inline"></StarIcon>
+                        <StarIcon className="w-6 h-6 inline text-yellow-400"></StarIcon>{' '}
                         <span className="align-bottom">{product.rating}</span>
                       </p>
                     </div>

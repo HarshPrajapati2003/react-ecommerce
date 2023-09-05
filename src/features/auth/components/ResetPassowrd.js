@@ -34,7 +34,7 @@ export default function ResetPassword() {
       <form noValidate onSubmit={handleSubmit((data) => {
             console.log(data);
             dispatch(resetPasswordAsync({email,token,password:data.password}))
-          })} className="space-y-6" method="POST">
+          })} className="space-y-6 contents" method="POST">
          <div>
             <div className="flex items-center justify-between">
               <label
