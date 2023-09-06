@@ -4,9 +4,9 @@ Welcome to **Shop Haven**, an exceptional e-commerce website that brings the wor
 
 ## Technologies Used 🚀
 
-- **Frontend**: React.js, Redux Toolkit, React Hook Form, Tailwind CSS. ![React Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3BLckGAD3EQb06edZWeaygQHtMzV-nFAYbBlQgxE&s)
+- **Frontend**: React.js, Redux Toolkit, React Hook Form, Tailwind CSS. 
 - **Backend**: Node.js, Express.js, MongoDB.
-- **Payment Processing**: Stripe. ![Stripe Logo](https://assets-global.website-files.com/5c2a9a234fdbba7439c48fa4/64cfc7deaea07df5b0c7d479_stripe%20square.webp)
+- **Payment Processing**: Stripe. 
 - **Authentication**: Passport.js.
 - **Email Services**: Node Mailer.
 - **User Interface Enhancement**: React Alert.
@@ -51,10 +51,6 @@ To set up this project locally or contribute to its development, please refer to
 
 ## Acknowledgments 🙌
 
-This project is the result of hard work and dedication. Special thanks go to the developer(s) and contributors who have played a vital role in making Shop Haven a reality. 🙌👏
-
-## License 📜
-
-This project is licensed under the [MIT License](LICENSE), ensuring that it remains open and accessible for others to learn from and build upon. Feel free to customize and use this extended summary for your GitHub repository README file, providing a comprehensive overview of your project and its impressive features. 📜🌐
+This project is the result of hard work and dedication.
 
 Shop Haven - Where Shopping Meets Convenience and Innovation! 🌟🛒
