@@ -44,9 +44,11 @@ const ProductForm = () => {
   useEffect(()=>{
     if(params.id){
         dispatch(fetchProductsByIdAsync(params.id))
+        window.scrollTo({ top: 0, left: 0 });
     }else{
         dispatch(clearSelectedProduct())
         reset()
+        window.scrollTo({ top: 0, left: 0 });
     } 
   },[params.id,dispatch])
 
