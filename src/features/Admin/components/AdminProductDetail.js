@@ -47,6 +47,7 @@ export default function AdminProductDetail() {
   useEffect(()=>{
     dispatch(fetchProductsByIdAsync(params.id))
     console.log(product)
+    window.scrollTo({ top: 0, left: 0 });
   },[dispatch,params])
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

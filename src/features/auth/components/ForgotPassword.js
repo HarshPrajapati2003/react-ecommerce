@@ -30,7 +30,7 @@ export default function ForgotPassword() {
           })} className="space-y-6 contents" method="POST">
         <div>
           <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-            Email address
+            Enter Your registered Email address :
           </label>
           <div className="mt-2">
           <input

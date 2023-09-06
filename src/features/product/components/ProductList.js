@@ -104,6 +104,7 @@ export default function ProductList() {
 
   const handlePage = (page) => {
     setPage(page);
+    window.scrollTo({ top: 0, left: 0 });
   };
 
   useEffect(() => {

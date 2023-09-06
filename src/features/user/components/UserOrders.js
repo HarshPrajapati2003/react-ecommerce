@@ -6,7 +6,7 @@ import {
   selectUserInfoStatus,
   selectUserOrders,
 } from "../userSlice";
-
+import { Link } from "react-router-dom";
 import { BallTriangle } from "react-loader-spinner";
 import ReactStars from "react-rating-stars-component";
 export default function UserOrders() {
@@ -22,19 +22,54 @@ export default function UserOrders() {
     console.log(newRating);
   };
 
+  const chooseColor = (status) => {
+    switch (status) {
+      case "pending":
+        return "text-xl my-5 font-bold tracking-tight text-purple-600";
+      case "dispatched":
+        return "text-xl my-5 font-bold tracking-tight text-yellow-600";
+      case "delivered":
+        return "text-xl my-5 font-bold tracking-tight text-green-600";
+      case "received":
+        return "text-xl my-5 font-bold tracking-tight text-green-600";
+      case "cancelled":
+        return "text-xl my-5 font-bold tracking-tight text-red-600";
+      default:
+        return "text-xl my-5 font-bold tracking-tight text-purple-600";
+    }
+  };
+
   return (
     <>
+     {status !== "loading" && <div>
+      {(!orders || orders.length===0 ) ? <><h1 className="text-center text-red-600 text-2xl">No Orders Yet!</h1><h2 className="text-center mt-3 text-indigo-600"><Link to="/">Click here to Go Back</Link></h2></>: <h1 className="text-center text-purple-600 font-bold text-2xl">My Orders</h1>}</div>}
+
+        {status === "loading" ? (
+        <BallTriangle
+          height={100}
+          width={100}
+          radius={5}
+          color="rgb(67, 56, 202)"
+          ariaLabel="ball-triangle-loading"
+          wrapperClass={{}}
+          wrapperStyle=""
+          visible={true}
+        />
+      ) : null}
+     
       {orders &&
         orders.map((order) => (
           <div>
             <div className="mx-auto bg-white mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                 <h1
-                  className="my-5 font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl"
+                  className="my-5 font-bold tracking-tight text-gray-900 text-xl sm:text-3xl md:text-4xl"
                 >
                   Order #{order.id}
                 </h1>
-                <h3 className="text-xl my-5 font-bold tracking-tight text-red-900">
+                <h3 className={`${chooseColor(
+                            order.status
+                          )}`}>
                   Order status : {order.status}
                 </h3>
                 <div className="flow-root">
@@ -135,18 +170,9 @@ export default function UserOrders() {
             </div>
           </div>
         ))}
-      {status === "loading" ? (
-        <BallTriangle
-          height={100}
-          width={100}
-          radius={5}
-          color="rgb(67, 56, 202)"
-          ariaLabel="ball-triangle-loading"
-          wrapperClass={{}}
-          wrapperStyle=""
-          visible={true}
-        />
-      ) : null}
+      
+  
+    
     </>
   );
 }

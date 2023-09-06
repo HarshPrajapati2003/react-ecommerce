@@ -90,6 +90,7 @@ export default function AdminProductList() {
 
   const handlePage = (page) => {
     setPage(page);
+    window.scrollTo({ top: 0, left: 0 });
   };
 
   useEffect(() => {
@@ -569,9 +570,9 @@ function ProductGrid({ products }) {
                   {product.deleted && <div>
                     <p className="text-sm text-red-400">Product deleted</p>
                   </div>}
-                  {product.stock<=0 && <div>
-                    <p className="text-sm text-red-400">Out of Stock</p>
-                  </div>}
+                  {product.stock<=0 ? 
+                    <p className="text-sm text-red-400">Out of Stock</p>:<p className="text-sm text-green-600 font-bold">Product Stock : {product.stock}</p>
+                  }
                 </div>
               </Link>
               <div>

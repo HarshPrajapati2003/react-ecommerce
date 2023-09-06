@@ -52,9 +52,8 @@ export default function UserProfile() {
   return (
     <div className="mx-auto bg-white mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
-        <h1 className="text-4xl my-5 font-bold tracking-tight text-gray-900">
-          Name :{" "}
-          {userInfo.addresses[0].name ? userInfo.addresses[0].name : "New User"}
+        <h1 className="text-2xl sm:text-3xl my-5 font-bold tracking-tight text-gray-900">
+          {userInfo.addresses[0] ? userInfo.addresses[0].name : ""}
         </h1>
         <h3 className="text-xl my-5 font-bold tracking-tight text-red-900">
           email address : {userInfo.email}
@@ -73,7 +72,7 @@ export default function UserProfile() {
             setShowAddAddressForm(true);
             setSelectedEditIndex(-1);
           }}
-          className="rounded-md my-5 bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+          className="rounded-md mb-5 bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
         >
           Add New Address
         </button>
