@@ -4,9 +4,9 @@ Welcome to **Shop Haven**, an exceptional e-commerce website that brings the wor
 
 ## Technologies Used 🚀
 
-- **Frontend**: React.js, Redux Toolkit, React Hook Form, Tailwind CSS. ![React Logo](https://link-to-react-logo-image)
+- **Frontend**: React.js, Redux Toolkit, React Hook Form, Tailwind CSS. ![React Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3BLckGAD3EQb06edZWeaygQHtMzV-nFAYbBlQgxE&s)
 - **Backend**: Node.js, Express.js, MongoDB.
-- **Payment Processing**: Stripe. ![Stripe Logo](https://link-to-stripe-logo-image)
+- **Payment Processing**: Stripe. ![Stripe Logo](https://assets-global.website-files.com/5c2a9a234fdbba7439c48fa4/64cfc7deaea07df5b0c7d479_stripe%20square.webp)
 - **Authentication**: Passport.js.
 - **Email Services**: Node Mailer.
 - **User Interface Enhancement**: React Alert.
